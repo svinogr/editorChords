@@ -17,8 +17,17 @@ class Lad {
     }
     
     func printStr()  {
-        for el in strings {
-            print(el)
+        for el in  (0..<strings.count) {
+            print(strings[el] ? 1:0, separator: "-", terminator: "")
         }
+        print(" ")
     }
+    
+    func printStrWithNumberStr() {
+        for (pos,  el)  in  strings.enumerated() {
+            print(el ? 1:0,"( \(pos) )", separator: "-", terminator: "")
+             }
+             print(" ")
+    }
+    
 }

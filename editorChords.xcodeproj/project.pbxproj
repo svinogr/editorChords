@@ -15,7 +15,18 @@
 		601B2D47234DD341003A87C4 /* Lad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601B2D46234DD341003A87C4 /* Lad.swift */; };
 		601B2D49234DD4F8003A87C4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601B2D48234DD4F8003A87C4 /* TableViewController.swift */; };
 		601B2D4B234DD61E003A87C4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601B2D4A234DD61E003A87C4 /* TableViewCell.swift */; };
+		D1223BF62372BB4C00136E44 /* editorChordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1223BF52372BB4C00136E44 /* editorChordsTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D1223BF82372BB4C00136E44 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 601B2D29234DD326003A87C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 601B2D30234DD326003A87C4;
+			remoteInfo = editorChords;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		601B2D31234DD326003A87C4 /* editorChords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = editorChords.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,10 +39,20 @@
 		601B2D46234DD341003A87C4 /* Lad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lad.swift; sourceTree = "<group>"; };
 		601B2D48234DD4F8003A87C4 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		601B2D4A234DD61E003A87C4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		D1223BF32372BB4C00136E44 /* editorChordsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = editorChordsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1223BF52372BB4C00136E44 /* editorChordsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editorChordsTests.swift; sourceTree = "<group>"; };
+		D1223BF72372BB4C00136E44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		601B2D2E234DD326003A87C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1223BF02372BB4C00136E44 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				601B2D33234DD326003A87C4 /* editorChords */,
+				D1223BF42372BB4C00136E44 /* editorChordsTests */,
 				601B2D32234DD326003A87C4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				601B2D31234DD326003A87C4 /* editorChords.app */,
+				D1223BF32372BB4C00136E44 /* editorChordsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,6 +94,15 @@
 				601B2D46234DD341003A87C4 /* Lad.swift */,
 			);
 			path = editorChords;
+			sourceTree = "<group>";
+		};
+		D1223BF42372BB4C00136E44 /* editorChordsTests */ = {
+			isa = PBXGroup;
+			children = (
+				D1223BF52372BB4C00136E44 /* editorChordsTests.swift */,
+				D1223BF72372BB4C00136E44 /* Info.plist */,
+			);
+			path = editorChordsTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,18 +125,40 @@
 			productReference = 601B2D31234DD326003A87C4 /* editorChords.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D1223BF22372BB4C00136E44 /* editorChordsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D1223BFC2372BB4C00136E44 /* Build configuration list for PBXNativeTarget "editorChordsTests" */;
+			buildPhases = (
+				D1223BEF2372BB4C00136E44 /* Sources */,
+				D1223BF02372BB4C00136E44 /* Frameworks */,
+				D1223BF12372BB4C00136E44 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D1223BF92372BB4C00136E44 /* PBXTargetDependency */,
+			);
+			name = editorChordsTests;
+			productName = editorChordsTests;
+			productReference = D1223BF32372BB4C00136E44 /* editorChordsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		601B2D29234DD326003A87C4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1110;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Up Devel";
 				TargetAttributes = {
 					601B2D30234DD326003A87C4 = {
 						CreatedOnToolsVersion = 10.2.1;
+					};
+					D1223BF22372BB4C00136E44 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 601B2D30234DD326003A87C4;
 					};
 				};
 			};
@@ -122,6 +176,7 @@
 			projectRoot = "";
 			targets = (
 				601B2D30234DD326003A87C4 /* editorChords */,
+				D1223BF22372BB4C00136E44 /* editorChordsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -134,6 +189,13 @@
 				601B2D3F234DD328003A87C4 /* LaunchScreen.storyboard in Resources */,
 				601B2D3C234DD328003A87C4 /* Assets.xcassets in Resources */,
 				601B2D3A234DD326003A87C4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1223BF12372BB4C00136E44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +214,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D1223BEF2372BB4C00136E44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1223BF62372BB4C00136E44 /* editorChordsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D1223BF92372BB4C00136E44 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 601B2D30234DD326003A87C4 /* editorChords */;
+			targetProxy = D1223BF82372BB4C00136E44 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		601B2D38234DD326003A87C4 /* Main.storyboard */ = {
@@ -326,6 +404,48 @@
 			};
 			name = Release;
 		};
+		D1223BFA2372BB4C00136E44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8R9NA68S2R;
+				INFOPLIST_FILE = editorChordsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.blabla.editorChordsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/editorChords.app/editorChords";
+			};
+			name = Debug;
+		};
+		D1223BFB2372BB4C00136E44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8R9NA68S2R;
+				INFOPLIST_FILE = editorChordsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.blabla.editorChordsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/editorChords.app/editorChords";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -343,6 +463,15 @@
 			buildConfigurations = (
 				601B2D44234DD328003A87C4 /* Debug */,
 				601B2D45234DD328003A87C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D1223BFC2372BB4C00136E44 /* Build configuration list for PBXNativeTarget "editorChordsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1223BFA2372BB4C00136E44 /* Debug */,
+				D1223BFB2372BB4C00136E44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

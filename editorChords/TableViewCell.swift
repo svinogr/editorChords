@@ -12,12 +12,13 @@ class TableViewCell: UITableViewCell {
     var lad: Lad! {
         didSet {
             numberLad.text = String(lad.id)
-            buttons = [oneString, twoString, threeString, fourString, fiveString, sixString]
+          //  buttons = [oneString, twoString, threeString, fourString, fiveString, sixString]
             for str in 0..<lad.strings.count {
                 changePicForString(number: str)
             }
         }
     }
+    
     var complision : (() -> ())!
     
     var lads: [Lad]!
@@ -28,62 +29,42 @@ class TableViewCell: UITableViewCell {
     
     @IBAction func SixStringAction(_ sender: Any) {
         let id = 5
-        self.lad.strings[id] = !self.lad.strings[id]
-        
-        
-        if(lad.strings[id]) {
-            diselectOtherstringsInLads(number: id)
-        }
-        changePicForString(number: id)
+      actionPressStringButton(id: id)
     }
     
     @IBAction func FiveStringAction(_ sender: Any) {
         let id = 4
-        self.lad.strings[id] = !self.lad.strings[id]
-        if(lad.strings[id]) {
-            diselectOtherstringsInLads(number: id)
-        }
-        changePicForString(number: id)
-        
+actionPressStringButton(id: id)
     }
     
     @IBAction func FourStringAction(_ sender: Any) {
         let id = 3
-        self.lad.strings[id] = !self.lad.strings[id]
-        if(lad.strings[id]) {
-            diselectOtherstringsInLads(number: id)
-        }
-        changePicForString(number: id)
-        
+      actionPressStringButton(id: id)
     }
     
     @IBAction func ThreStringAction(_ sender: Any) {
         let id = 2
-        self.lad.strings[2] = !self.lad.strings[id]
-        if(lad.strings[id]) {
-            diselectOtherstringsInLads(number: id)
-        }
-        changePicForString(number: id)
-        
+   actionPressStringButton(id: id)
     }
     
     @IBAction func TwoStringAction(_ sender: Any) {
         let id = 1
-        self.lad.strings[id] = !self.lad.strings[id]
-        if(lad.strings[id]) {
-            diselectOtherstringsInLads(number: id)
-        }
-        changePicForString(number: id)
+      actionPressStringButton(id: id)
     }
     
     @IBAction func OneStringAction(_ sender: Any) {
         let id = 0
-        self.lad.strings[0] = !self.lad.strings[0]
-        if(lad.strings[id]) {
-            diselectOtherstringsInLads(number: id)
-        }
-        changePicForString(number: id)
+        actionPressStringButton(id: id)
     }
+    
+    private func actionPressStringButton(id: Int) {
+        self.lad.strings[5 - id] = !self.lad.strings[5 - id]
+        if(lad.strings[5 - id]) {
+            diselectOtherstringsInLads(number: 5 - id)
+        }
+        changePicForString(number: 5 - id)
+    }
+    
     
     @IBOutlet weak var numberLad: UILabel!
     
@@ -107,23 +88,20 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var oneString: UIButton!
     
     func changePicForString(number: Int) {
-        
-        
-        
         var button: UIButton?
         
         switch number {
-        case 0:
-            button = self.oneString
-        case 1:
-            button = self.twoString
-        case 2:
-            button = self.threeString
-        case 3:
-            button = self.fourString
-        case 4:
-            button = self.fiveString
         case 5:
+            button = self.oneString
+        case 4:
+            button = self.twoString
+        case 3:
+            button = self.threeString
+        case 2:
+            button = self.fourString
+        case 1:
+            button = self.fiveString
+        case 0:
             button = self.sixString
         default:
             print("notNet")
