@@ -49,11 +49,15 @@ class TableViewController: UITableViewController {
      
         var smal = createArrayAckord(from: lads)
         
-        for i in smal {
-           // i.printStr()
-            i.printStrWithNumberStr()
-        }
+        let vc = segue.destination as! PngViewController
         
+        vc.lad = smal
+        
+//        for i in smal {
+//           // i.printStr()
+//           // i.printStrWithNumberStr()
+//        }
+//
     }
 
     private func createArrayAckord(from array: [Lad]) -> [Lad] {

@@ -148,20 +148,36 @@
             </objects>
             <point key="canvasLocation" x="1753.6231884057972" y="120.53571428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Png View Controller-->
         <scene sceneID="5dS-Mf-hLl">
             <objects>
-                <viewController id="UZr-Pd-kvq" sceneMemberID="viewController">
+                <viewController id="UZr-Pd-kvq" customClass="PngViewController" customModule="editorChords" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1wU-hA-Zca">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Slz-CN-N4S">
+                                <rect key="frame" x="87" y="284" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="Nlb-8m-iCJ"/>
+                                    <constraint firstAttribute="width" constant="240" id="tk0-5T-OH8"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Slz-CN-N4S" firstAttribute="centerX" secondItem="hCC-am-TI3" secondAttribute="centerX" id="Juu-tu-ZYc"/>
+                            <constraint firstItem="Slz-CN-N4S" firstAttribute="centerY" secondItem="hCC-am-TI3" secondAttribute="centerY" id="PTG-Ge-ubB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hCC-am-TI3"/>
                     </view>
+                    <connections>
+                        <outlet property="png" destination="Slz-CN-N4S" id="jLb-Ql-Lqe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ytO-dc-BPQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2533" y="45"/>
+            <point key="canvasLocation" x="2531.8840579710145" y="44.866071428571423"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KQd-fd-uc6">
