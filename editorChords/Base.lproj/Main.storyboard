@@ -139,7 +139,7 @@
                     <navigationItem key="navigationItem" id="Vsc-Bo-3wT">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="cIR-iA-2dx">
                             <connections>
-                                <segue destination="UZr-Pd-kvq" kind="showDetail" identifier="shouAcckord" id="lJu-9g-ucj"/>
+                                <segue destination="UZr-Pd-kvq" kind="presentation" identifier="shouAcckord" id="lJu-9g-ucj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

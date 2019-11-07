@@ -9,15 +9,18 @@
 import UIKit
 
 class PngViewController: UIViewController {
+    private let im1 = UIImage(named: "1")!
+    private let im2 = UIImage(named: "2")!
+    private let size = CGSize(width: 240, height: 240)
 
     @IBOutlet weak var png: UIImageView!
     
-    var lad: [Lad]!
+    var lads: [Lad]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      for i in lad {
+      for i in lads {
                     i.printStr()
                    // i.printStrWithNumberStr()
                 }
@@ -26,26 +29,57 @@ createPNG()
     }
     
     private func createPNG() {
-        let im1 = UIImage(named: "1")
-        let im2 = UIImage(named: "2")
-        
-        var size = CGSize(width: 240, height: 240)
         UIGraphicsBeginImageContext(size)
         
-        var areaSize = CGRect(x: 0, y: 0, width: 24, height: 24)
-        im1!.draw(in: areaSize)
-        
-         areaSize = CGRect(x: 24, y: 0, width: 24, height: 24)
-        im1!.draw(in: areaSize)
-        
+        createGriff()
+        createAckord()
 
-        im2!.draw(in: areaSize, blendMode: .normal, alpha: 0.8)
-
-        var newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        let  newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
         png.image = newImage
+    }
+    
+    private func createAckord() {
         
+        for i in 1..<lads.count {
+            var image: UIImage
+            
+            for j in 0..<lads[i].strings.count {
+                if lads[i].strings[j] == false {
+                    image = im1
+                } else {
+                    image = im2
+                }
+                
+                let x = j * 24
+                let y = i * 24
+                
+                let areaSize =  CGRect(x: x, y: y, width: 24, height: 24)
+                image.draw(in: areaSize)
+                
+            }
+        }
+    }
+    
+    private func createGriff() {
+        var image: UIImage
+        let grif = lads[0]
+        
+        for j in 0..<grif.strings.count {
+            if grif.strings[j] == false {
+                image = im1
+            } else {
+                image = im2
+            }
+            
+            let x = j * 24
+            let y =  0
+            
+            let areaSize =  CGRect(x: x, y: y, width: 24, height: 24)
+            image.draw(in: areaSize)
+            }
+
     }
     
 

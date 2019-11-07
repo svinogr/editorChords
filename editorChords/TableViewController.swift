@@ -51,7 +51,7 @@ class TableViewController: UITableViewController {
         
         let vc = segue.destination as! PngViewController
         
-        vc.lad = smal
+        vc.lads = smal
         
 //        for i in smal {
 //           // i.printStr()
@@ -86,7 +86,9 @@ class TableViewController: UITableViewController {
         print(startLad)
        
        var smallAr = [Lad]()
-       
+        let grif = lads[0]
+        smallAr.append(grif)
+        
         for i in startLad..<startLad + 5 {
       //      array[i].printStr()
             smallAr.append(array[i])
