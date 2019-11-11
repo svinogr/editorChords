@@ -107,10 +107,20 @@ actionPressStringButton(id: id)
             print("notNet")
         }
         
+        let name = "\(self.lad.id)_\(number)"
+        print(name)
+        
         if (self.lad.strings[number]){
-            button!.backgroundColor = .black
+          //  button!.backgroundImage(for: .normal) = UIImage(named: "1")
             
-        }else {button!.backgroundColor = .green}
+            
+            button!.setBackgroundImage(UIImage(named: "\(name)p"), for: .normal)
+             
+        }else
+        {
+       button!.setBackgroundImage(UIImage(named: name), for: .normal)
+            
+        }
         
     }
     

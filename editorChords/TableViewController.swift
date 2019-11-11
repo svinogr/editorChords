@@ -15,7 +15,7 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        for i in 0..<25 {
+        for i in 0..<13 {
             let lad = Lad(id: i)
             lads.append(lad)
         }

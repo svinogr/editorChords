@@ -18,14 +18,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="wbr-fO-Qf3" customClass="TableViewCell" customModule="editorChords" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="34"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wbr-fO-Qf3" id="71f-2V-BTl">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wny-U2-pE0">
-                                            <rect key="frame" x="20" y="7.5" width="42" height="25"/>
+                                            <rect key="frame" x="20" y="4.5" width="42" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="RoF-t2-BkX"/>
                                                 <constraint firstAttribute="height" constant="25" id="yAl-A4-8mX"/>
@@ -34,77 +34,65 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="h62-cL-LDj">
-                                            <rect key="frame" x="70" y="0.0" width="240" height="40"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="h62-cL-LDj">
+                                            <rect key="frame" x="70" y="0.0" width="180" height="34"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cll-0I-zZa">
-                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                                    <color key="backgroundColor" red="0.38222469889999999" green="1" blue="0.33841577839999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cll-0I-zZa">
+                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="40" id="9qJ-CE-eb8"/>
-                                                        <constraint firstAttribute="height" constant="40" id="UDc-Jf-ldb"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="9qJ-CE-eb8"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="UDc-Jf-ldb"/>
                                                     </constraints>
-                                                    <state key="normal" title="6"/>
                                                     <connections>
                                                         <action selector="SixStringAction:" destination="wbr-fO-Qf3" eventType="touchUpInside" id="ppQ-3f-bkR"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bom-et-8bj">
-                                                    <rect key="frame" x="40" y="0.0" width="40" height="40"/>
-                                                    <color key="backgroundColor" red="1" green="0.82901412949999997" blue="0.1986358054" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="30" y="0.0" width="30" height="34"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="40" id="mYt-b9-CkF"/>
-                                                        <constraint firstAttribute="height" constant="40" id="xxt-Kd-1Il"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="mYt-b9-CkF"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="xxt-Kd-1Il"/>
                                                     </constraints>
-                                                    <state key="normal" title="5"/>
                                                     <connections>
                                                         <action selector="FiveStringAction:" destination="wbr-fO-Qf3" eventType="touchUpInside" id="cfo-tb-KPN"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BRN-DM-GMx">
-                                                    <rect key="frame" x="80" y="0.0" width="40" height="40"/>
-                                                    <color key="backgroundColor" red="0.87563451780000001" green="0.1309868776" blue="0.0075652926780000003" alpha="0.52054794520000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="60" y="0.0" width="30" height="34"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="6ak-0t-X3B"/>
-                                                        <constraint firstAttribute="width" constant="40" id="fY8-Km-Ira"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="6ak-0t-X3B"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="fY8-Km-Ira"/>
                                                     </constraints>
-                                                    <state key="normal" title="4"/>
                                                     <connections>
                                                         <action selector="FourStringAction:" destination="wbr-fO-Qf3" eventType="touchUpInside" id="qcY-fP-6VI"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dT-tb-N2q">
-                                                    <rect key="frame" x="120" y="0.0" width="40" height="40"/>
-                                                    <color key="backgroundColor" red="0.54157727960000002" green="0.1643867195" blue="0.059696473180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="90" y="0.0" width="30" height="34"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="40" id="6xE-oF-EJL"/>
-                                                        <constraint firstAttribute="height" constant="40" id="s2Q-Ex-VQy"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="6xE-oF-EJL"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="s2Q-Ex-VQy"/>
                                                     </constraints>
-                                                    <state key="normal" title="3"/>
                                                     <connections>
                                                         <action selector="ThreStringAction:" destination="wbr-fO-Qf3" eventType="touchUpInside" id="8t1-Qa-UHG"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxI-Ga-QNJ">
-                                                    <rect key="frame" x="160" y="0.0" width="40" height="40"/>
-                                                    <color key="backgroundColor" red="1" green="0.82901412949999997" blue="0.1986358054" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="120" y="0.0" width="30" height="34"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="Eaz-RW-03b"/>
-                                                        <constraint firstAttribute="width" constant="40" id="bta-P9-5mu"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="Eaz-RW-03b"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="bta-P9-5mu"/>
                                                     </constraints>
-                                                    <state key="normal" title="2"/>
                                                     <connections>
                                                         <action selector="TwoStringAction:" destination="wbr-fO-Qf3" eventType="touchUpInside" id="OO7-y0-bz6"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyS-NL-qJl">
-                                                    <rect key="frame" x="200" y="0.0" width="40" height="40"/>
-                                                    <color key="backgroundColor" red="0.38222469889999999" green="1" blue="0.33841577839999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="150" y="0.0" width="30" height="34"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="Y4G-Uh-VWF"/>
-                                                        <constraint firstAttribute="width" constant="40" id="pde-PB-0kA"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="Y4G-Uh-VWF"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="pde-PB-0kA"/>
                                                     </constraints>
-                                                    <state key="normal" title="1"/>
                                                     <connections>
                                                         <action selector="OneStringAction:" destination="wbr-fO-Qf3" eventType="touchUpInside" id="2c6-Yx-uqb"/>
                                                     </connections>
