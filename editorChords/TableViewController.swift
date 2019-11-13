@@ -47,7 +47,7 @@ class TableViewController: UITableViewController {
  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      
-        var smal = createArrayAckord(from: lads)
+        let smal = createArrayAckord(from: lads)
         
         let vc = segue.destination as! PngViewController
         
