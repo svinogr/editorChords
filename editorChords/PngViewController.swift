@@ -8,10 +8,12 @@
 
 import UIKit
 
+
+
 class PngViewController: UIViewController {
     private let im1 = UIImage(named: "1")!
     private let im2 = UIImage(named: "2")!
-    private let size = CGSize(width: 240, height: 240)
+    private let size = CGSize(width: 1400, height: 1314)
     
     @IBOutlet weak var png: UIImageView!
     
@@ -32,8 +34,8 @@ class PngViewController: UIViewController {
         UIGraphicsBeginImageContext(size)
         
         createGriff()
-        createAckord()
-        createLadImage()
+       // createAckord()
+       // createLadImage()
         
         let  newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
@@ -41,14 +43,14 @@ class PngViewController: UIViewController {
         png.image = newImage
     }
     
-    private func createAckord() {
+    private func createAckordOLD() {
         
         for i in 1..<lads.count {
             var image: UIImage
             
             
             for j in 0..<lads[i].strings.count {
-                if lads[i].strings[j] == false {
+                if lads[i].strings[j] == StatusString.open {
                     image = im1
                 } else {
                     image = im2
@@ -63,21 +65,115 @@ class PngViewController: UIViewController {
         }
     }
     
+    private func createAckord() {
+         reinitializedFirstLadWithClosedStrings()
+        
+         for i in 1..<lads.count {
+             var image: UIImage
+             let curentLad = lads[i]
+            
+            if i == 1 {
+                
+                for j in 0..<lads[i].strings.count {
+                    if j == 0  {
+                        // только для первой струны
+                        
+                        switch curentLad.strings[j] {
+                        case StatusString.closed:
+                            image = UIImage(named: "6_x")!
+                        case StatusString.open:
+                            image = UIImage(named: "6_empty")!
+                        case StatusString.played:
+                            image = UIImage(named: "6_o")!
+                        }
+                        
+                        if curentLad.strings[j] == StatusString.closed {
+                            
+                        }
+                        
+                    } else {
+                    
+                    //  остальные струны
+                    }
+                }
+                
+                
+                
+            } else {
+            
+             
+             for j in 0..<lads[i].strings.count {
+                
+                if j == 0  {
+                    // только для первой струны
+                  //  if curentLad.strings[j] == StatusString.closed {
+                        
+                    }
+                    
+                    continue
+                }
+                
+                if lads[i].strings[j] == StatusString.open {
+                     image = im1
+                 } else {
+                     image = im2
+                 }
+                 
+                 let x = j * 24 + 24
+                 let y = i * 24
+                 
+                 let areaSize =  CGRect(x: x, y: y, width: 24, height: 24)
+                 image.draw(in: areaSize)
+             }
+            }
+         }
+     }
+    
+    private func reinitializedFirstLadWithClosedStrings() {
+        let zeroLad = lads[0]
+        let oneLad = lads[1]
+        
+        for i in 0..<zeroLad.strings.count {
+            
+            if zeroLad.strings[i] == StatusString.played {
+               oneLad.strings[i] = StatusString.closed
+            }
+        }
+    }
+    
+    
+    private func createGriffOLD() {
+      var image: UIImage
+        let step = 200
+            let grif = lads[0]
+    
+            for j in 0..<grif.strings.count {
+                if grif.strings[j] == StatusString.open {
+                    image = im1
+                } else {
+                    image = im2
+                }
+    
+                let x = j * step + step
+                let y =  0
+    
+                let areaSize =  CGRect(x: x, y: y, width: 24, height: 24)
+                image.draw(in: areaSize)
+            }
+    }
+    
     private func createGriff() {
         var image: UIImage
-        let grif = lads[0]
+        let step = 200
         
-        for j in 0..<grif.strings.count {
-            if grif.strings[j] == false {
-                image = im1
-            } else {
-                image = im2
-            }
+        for i in 1..<8 {
+            let namePic = "0_0\(i)"
+            print(namePic)
+            image = UIImage(named: namePic)!
             
-            let x = j * 24 + 24
-            let y =  0
+            let x = i * step
             
-            let areaSize =  CGRect(x: x, y: y, width: 24, height: 24)
+            let areaSize =  CGRect(x: x, y: 0, width: 200, height: 104)
             image.draw(in: areaSize)
         }
     }

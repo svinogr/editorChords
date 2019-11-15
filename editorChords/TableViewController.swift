@@ -71,7 +71,7 @@ class TableViewController: UITableViewController {
             
             for j in i.strings {
                 
-                if j == true {
+                if j == StatusString.played {
                     startLad = i.id
                     flag = true
                 }

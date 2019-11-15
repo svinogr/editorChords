@@ -58,8 +58,15 @@ actionPressStringButton(id: id)
     }
     
     private func actionPressStringButton(id: Int) {
-        self.lad.strings[5 - id] = !self.lad.strings[5 - id]
-        if(lad.strings[5 - id]) {
+        if self.lad.strings[5 - id] == StatusString.open {
+            self.lad.strings[5 - id] = StatusString.played
+        } else {
+             self.lad.strings[5 - id] = StatusString.open
+        }
+        
+       // self.lad.strings[5 - id] =  !self.lad.strings[5 - id]
+       
+        if(lad.strings[5 - id] == StatusString.played) {
             diselectOtherstringsInLads(number: 5 - id)
         }
         changePicForString(number: 5 - id)
@@ -110,7 +117,7 @@ actionPressStringButton(id: id)
         let name = "\(self.lad.id)_\(number)"
         print(name)
         
-        if (self.lad.strings[number]){
+        if (self.lad.strings[number]) == StatusString.played{
           //  button!.backgroundImage(for: .normal) = UIImage(named: "1")
             
             
@@ -129,7 +136,7 @@ actionPressStringButton(id: id)
         
         for i in lads {
             if i.id != lad.id {
-                i.strings[number] = false
+                i.strings[number] = StatusString.open
                 complision()
             }
         }

@@ -8,9 +8,16 @@
 
 import Foundation
 
+enum StatusString {
+   case played
+   case closed
+   case open
+}
+
 class Lad {
     let id: Int
-    var strings = [false,false,false,false,false,false]
+   // var strings = [false,false,false,false,false,false]
+    var strings = [StatusString.open, StatusString.open, StatusString.open, StatusString.open, StatusString.open, StatusString.open]
     
     init(id: Int) {
         self.id = id
@@ -18,14 +25,14 @@ class Lad {
     
     func printStr()  {
         for el in  (0..<strings.count) {
-            print(strings[el] ? 1:0, separator: "-", terminator: "")
+            print(strings[el], separator: "-", terminator: "")
         }
         print(" ")
     }
     
     func printStrWithNumberStr() {
         for (pos,  el)  in  strings.enumerated() {
-            print(el ? 1:0,"( \(pos) )", separator: "-", terminator: "")
+            print(el ,"( \(pos) )", separator: "-", terminator: "")
              }
              print(" ")
     }
