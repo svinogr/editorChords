@@ -34,8 +34,8 @@ class PngViewController: UIViewController {
         UIGraphicsBeginImageContext(size)
         
         createGriff()
-       // createAckord()
-       // createLadImage()
+        createAckord()
+        createLadImage()
         
         let  newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
@@ -65,69 +65,150 @@ class PngViewController: UIViewController {
         }
     }
     
+    private class ShemeString {
+    var start = "6"
+    var end = "o"
+   
+        func toString() -> String {
+            return "\(start)_\(end)"
+        }
+
+        
+    }
+    
     private func createAckord() {
          reinitializedFirstLadWithClosedStrings()
-        
+       
          for i in 1..<lads.count {
+            
+            let shmeme =  getShemesStrings(from: lads[i])
+        
              var image: UIImage
-             let curentLad = lads[i]
+                let step = 200
             
-            if i == 1 {
                 
-                for j in 0..<lads[i].strings.count {
-                    if j == 0  {
-                        // только для первой струны
-                        
-                        switch curentLad.strings[j] {
-                        case StatusString.closed:
-                            image = UIImage(named: "6_x")!
-                        case StatusString.open:
-                            image = UIImage(named: "6_empty")!
-                        case StatusString.played:
-                            image = UIImage(named: "6_o")!
-                        }
-                        
-                        if curentLad.strings[j] == StatusString.closed {
-                            
-                        }
-                        
-                    } else {
+            for j in 0..<shmeme.count {
+                let namePic = shmeme[j].toString()
+                    print(namePic)
+                    image = UIImage(named: namePic)!
                     
-                    //  остальные струны
-                    }
+                    let x = j * 200
+                    let y =  (i - 1) * 242 + 104
+                print(x, y)
+                    let areaSize =  CGRect(x: x, y: y, width: 200, height: 242)
+                    image.draw(in: areaSize)
                 }
-                
-                
-                
-            } else {
-            
-             
-             for j in 0..<lads[i].strings.count {
-                
-                if j == 0  {
-                    // только для первой струны
-                  //  if curentLad.strings[j] == StatusString.closed {
-                        
-                    }
-                    
-                    continue
-                }
-                
-                if lads[i].strings[j] == StatusString.open {
-                     image = im1
-                 } else {
-                     image = im2
-                 }
-                 
-                 let x = j * 24 + 24
-                 let y = i * 24
-                 
-                 let areaSize =  CGRect(x: x, y: y, width: 24, height: 24)
-                 image.draw(in: areaSize)
-             }
-            }
-         }
+        }
+        
+//         for i in 1..<lads.count {
+//             var image: UIImage
+//             let curentLad = lads[i]
+//
+//            if i == 1 {
+//
+//                for j in 0..<lads[i].strings.count {
+//                    if j == 0  {
+//                        // только для первой струны
+//
+//                        switch curentLad.strings[j] {
+//                        case StatusString.closed:
+//                            image = UIImage(named: "6_x")!
+//                        case StatusString.open:
+//                            image = UIImage(named: "6_empty")!
+//                        case StatusString.played:
+//                            image = UIImage(named: "6_o")!
+//                        }
+//
+//                        if curentLad.strings[j] == StatusString.closed {
+//
+//                        }
+//
+//                    } else {
+//
+//                    //  остальные струны
+//                    }
+//                }
+//
+//
+//
+//            } else {
+//
+//
+//             for j in 0..<lads[i].strings.count {
+//
+//                if j == 0  {
+//                    // только для первой струны
+//                  //  if curentLad.strings[j] == StatusString.closed {
+//
+//                    }
+//
+//                    continue
+//                }
+//
+//                if lads[i].strings[j] == StatusString.open {
+//                     image = im1
+//                 } else {
+//                     image = im2
+//                 }
+//
+//                 let x = j * 24 + 24
+//                 let y = i * 24
+//
+//                 let areaSize =  CGRect(x: x, y: y, width: 24, height: 24)
+//                 image.draw(in: areaSize)
+//             }
+//            }
+//         }
      }
+    
+    private func getShemesStrings(from lad: Lad) -> [ShemeString] {
+        var arrayShemeStrings = [ShemeString]()
+        
+        for i in 0..<6 {
+            
+            let iPast = i - 1
+            
+            let strladIm = ShemeString()
+            
+            if iPast > -1 {
+                strladIm.start = closedChemeString(for: arrayShemeStrings[iPast].end)
+            }
+             
+                switch lad.strings[i] {
+                case StatusString.open:
+                    strladIm.end = "o"
+                case StatusString.closed:
+                    strladIm.end = ")"
+                case StatusString.played:
+                    strladIm.end = "("
+            }
+
+            arrayShemeStrings.append( strladIm)
+            print(i, strladIm.start, strladIm.end)
+            
+            if i == 5 {
+                let end = ShemeString()
+                end.start = "1"
+                end.end = closedChemeString(for: arrayShemeStrings[5].end)
+                arrayShemeStrings.append(end)
+                print(end.start, end.end)
+            }
+        }
+        return arrayShemeStrings
+    }
+    
+    private func closedChemeString(for input : String) -> String {
+        switch input {
+        case "(":
+            return  ")"
+        case ")":
+             return  "("
+        case "o":
+             return  "o"
+        default:
+            return "error"
+        }
+    }
     
     private func reinitializedFirstLadWithClosedStrings() {
         let zeroLad = lads[0]
@@ -166,8 +247,8 @@ class PngViewController: UIViewController {
         var image: UIImage
         let step = 200
         
-        for i in 1..<8 {
-            let namePic = "0_0\(i)"
+        for i in 0..<7 {
+            let namePic = "0_0\(i + 1)"
             print(namePic)
             image = UIImage(named: namePic)!
             
@@ -180,9 +261,9 @@ class PngViewController: UIViewController {
     
     private func createLadImage() {
         let numberOfStartLad = lads[1].id
-        var stepForImagePosition = 1
+        var stepForImagePosition = 0
         let textColor = UIColor.red
-        let textFont = UIFont(name: "Helvetica Bold", size: 24)!
+        let textFont = UIFont(name: "Helvetica Bold", size: 220)!
         
         let textFontAttributes = [
             NSAttributedString.Key.font: textFont,
@@ -190,13 +271,13 @@ class PngViewController: UIViewController {
         ]
         
         for i in numberOfStartLad..<numberOfStartLad + 5 {
-            UIGraphicsBeginImageContext(CGSize(width: 24, height: 24))
+            UIGraphicsBeginImageContext(size)
             
             let letter = String(i)
             
             let xLetter = 0
-            let yLetter = stepForImagePosition * 24
-            let areaSizeLad = CGRect(x: xLetter, y: yLetter, width: 24, height: 24)
+            let yLetter = stepForImagePosition * 242 + 104
+            let areaSizeLad = CGRect(x: xLetter, y: yLetter, width: 200, height: 242)
             
             UIGraphicsEndImageContext()
             letter.draw(in: areaSizeLad, withAttributes: textFontAttributes)

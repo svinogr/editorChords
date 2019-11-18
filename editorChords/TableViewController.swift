@@ -62,7 +62,6 @@ class TableViewController: UITableViewController {
 
     private func createArrayAckord(from array: [Lad]) -> [Lad] {
         var startLad = 0
-        
        
         for  i in array {
             var flag = false
@@ -85,15 +84,15 @@ class TableViewController: UITableViewController {
         
         print(startLad)
        
-       var smallAr = [Lad]()
+        var smallAr = [Lad]()
         let grif = lads[0]
         smallAr.append(grif)
         
         for i in startLad..<startLad + 5 {
-      //      array[i].printStr()
+            //      array[i].printStr()
             smallAr.append(array[i])
         }
-
+        
         return smallAr
         
     }
