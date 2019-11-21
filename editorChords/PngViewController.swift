@@ -16,6 +16,16 @@ class PngViewController: UIViewController {
     private let size = CGSize(width: 1400, height: 1314)
     
     @IBOutlet weak var png: UIImageView!
+    @IBAction func share(_ sender: UIBarButtonItem) {
+        let aPV = UIActivityViewController(activityItems: [png.image], applicationActivities: nil)
+        
+        aPV.popoverPresentationController?.barButtonItem = sender
+        aPV.popoverPresentationController?.permittedArrowDirections = .any
+        
+        present(aPV, animated: true, completion: nil)
+        
+        
+    }
     
     var lads: [Lad]!
     
@@ -262,8 +272,8 @@ class PngViewController: UIViewController {
     private func createLadImage() {
         let numberOfStartLad = lads[1].id
         var stepForImagePosition = 0
-        let textColor = UIColor.red
-        let textFont = UIFont(name: "Helvetica Bold", size: 220)!
+        let textColor = UIColor.black
+        let textFont = UIFont(name: "Menlo", size: 220)!
         
         let textFontAttributes = [
             NSAttributedString.Key.font: textFont,
@@ -283,5 +293,12 @@ class PngViewController: UIViewController {
             letter.draw(in: areaSizeLad, withAttributes: textFontAttributes)
             stepForImagePosition = stepForImagePosition + 1
         }
+    }
+}
+
+extension PngViewController {
+    
+    func testGet(s: String) -> String {
+        return closedChemeString(for: s)
     }
 }

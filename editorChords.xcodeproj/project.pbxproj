@@ -42,7 +42,7 @@
 		601B2D4A234DD61E003A87C4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		D1223BF32372BB4C00136E44 /* editorChordsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = editorChordsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1223BF52372BB4C00136E44 /* editorChordsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editorChordsTests.swift; sourceTree = "<group>"; };
-		D1223BF72372BB4C00136E44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1223BF72372BB4C00136E44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = editorChordsTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		D1223BFD2372F5F800136E44 /* PngViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PngViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,8 +102,8 @@
 		D1223BF42372BB4C00136E44 /* editorChordsTests */ = {
 			isa = PBXGroup;
 			children = (
-				D1223BF52372BB4C00136E44 /* editorChordsTests.swift */,
 				D1223BF72372BB4C00136E44 /* Info.plist */,
+				D1223BF52372BB4C00136E44 /* editorChordsTests.swift */,
 			);
 			path = editorChordsTests;
 			sourceTree = "<group>";

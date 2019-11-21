@@ -19,6 +19,10 @@ class TableViewController: UITableViewController {
             let lad = Lad(id: i)
             lads.append(lad)
         }
+        
+        tableView.estimatedRowHeight = 400
+        tableView.rowHeight = UITableView.automaticDimension
+        
     }
 
     // MARK: - Table view data source

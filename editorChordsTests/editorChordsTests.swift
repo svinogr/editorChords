@@ -21,7 +21,13 @@ class TableVCTests: XCTestCase {
     }
 
     func testExample() {
-       let sut = TableViewController()
+       let sut = PngViewController()
+        let str = ")"
+        
+        let out = sut.testGet(s: str)
+        
+  XCTAssert(out == "(")
+        
    
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
