@@ -15,16 +15,18 @@ class PngViewController: UIViewController {
     private let im2 = UIImage(named: "2")!
     private let size = CGSize(width: 1400, height: 1314)
     
+    private var quantitiPlayedStrings = 0
+    private let offsetBareLine = 225
+    private let widthBareLine = 10
+    
     @IBOutlet weak var png: UIImageView!
     @IBAction func share(_ sender: UIBarButtonItem) {
-        let aPV = UIActivityViewController(activityItems: [png.image], applicationActivities: nil)
+        let aPV = UIActivityViewController(activityItems: [png.image!], applicationActivities: nil)
         
         aPV.popoverPresentationController?.barButtonItem = sender
         aPV.popoverPresentationController?.permittedArrowDirections = .any
         
         present(aPV, animated: true, completion: nil)
-        
-        
     }
     
     var lads: [Lad]!
@@ -43,36 +45,17 @@ class PngViewController: UIViewController {
     private func createPNG() {
         UIGraphicsBeginImageContext(size)
         
-        createGriff()
-        createAckord()
-        createLadImage()
+      // createGriff()
+        createBarreLine()
+     //   createAckord()
+     //   createLadImage()
         
-        let  newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        let  newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
         png.image = newImage
-    }
-    
-    private func createAckordOLD() {
         
-        for i in 1..<lads.count {
-            var image: UIImage
-            
-            
-            for j in 0..<lads[i].strings.count {
-                if lads[i].strings[j] == StatusString.open {
-                    image = im1
-                } else {
-                    image = im2
-                }
-                
-                let x = j * 24 + 24
-                let y = i * 24
-                
-                let areaSize =  CGRect(x: x, y: y, width: 24, height: 24)
-                image.draw(in: areaSize)
-            }
-        }
+        print("quantitiPlayedStrings", quantitiPlayedStrings )
     }
     
     private class ShemeString {
@@ -82,7 +65,72 @@ class PngViewController: UIViewController {
         func toString() -> String {
             return "\(start)_\(end)"
         }
+    }
+    
+    private func createBarreLine() {
+        var maxStringInFirstlad = -1
+        let strings  = lads[1].strings
+        
+        for stringNumber in 0...5 {
+            if strings[stringNumber] == StatusString.played {
+                maxStringInFirstlad = stringNumber
+                break
+            }
+        }
+        
+        for id in 1..<lads!.count {
+                 for str in lads[id].strings {
+                     if str == StatusString.played {
+                      quantitiPlayedStrings = quantitiPlayedStrings + 1
+                     }
+                 }
+                 
+             }
+        
+       // if quantitiPlayedStrings > 4 {
+            drowBarre(from: maxStringInFirstlad)
+       // }
+        
+        print("maxStringInFirstlad" , maxStringInFirstlad )
+               print("quantitiPlayedStrings", quantitiPlayedStrings)
+    }
+    
+    private func drowBarre(from: Int) {
+        let step = from * 188 + 188
+        print("step", step)
+        let context = UIGraphicsGetCurrentContext()!
+        print(context)
+        
+        let endPoint = size.width - 188
+        
+        context.setLineWidth(5.0)
+    //    context.setStrokeColor(UIColor.black.cgColor)
+ //       context.move(to: CGPoint(x: step, y: 225))
+  //      context.addLine(to: CGPoint(x: endPoint, y: 225))
+  //      context.strokePath()
+        
+        context.setStrokeColor(UIColor.red.cgColor)
+        //context.setAlpha(0.5)
+        //context.setLineWidth(10.0)
+    //    context.addArc(center: CGPoint(x: 500, y: 500), radius: 400, startAngle: 0, endAngle: 90, clockwise: true)
+        
+        let ab = 1314.0/2
+        let c = 50.0
+        let d = Double (ab * ab) / c
+        let r = (d + c )/2
+        let point = CGPoint(x:500, y:0 - r)
+        let angl = acos(Double ((ab/2)/r))
 
+        print("a = \(ab)  b = \(ab)  c = \(c)  r = \(r) po = \(point) abgle = \(angl)")
+       
+       //context.addArc(tangent1End: CGPoint(x: 5, y: 5), tangent2End: CGPoint(x: 10, y: 10), radius: 8000)
+       // context.addArc(center: point, radius: CGFloat (r), startAngle: CGFloat (((180 * 3.14)/180) + angl), endAngle: CGFloat (((360 * 3.14)/180) - angl), clockwise: true)
+        
+        context.addArc(center: point, radius: CGFloat (r), startAngle: CGFloat (3.1416 + angl), endAngle: CGFloat (6.2832 - angl), clockwise: true)
+       // context.addEllipse(in: CGRect(x: 188, y: 100, width:  657 * 2, height: 657 * 2))
+     //   context.drawPath(using: .stroke) // or .fillStroke if need filling
+
+        
         
     }
     
@@ -96,10 +144,8 @@ class PngViewController: UIViewController {
              var image: UIImage
                 let step = 200
             
-                
             for j in 0..<shmeme.count {
                 let namePic = shmeme[j].toString()
-                    print(namePic)
                     image = UIImage(named: namePic)!
                     
                     let x = j * 200
@@ -109,66 +155,6 @@ class PngViewController: UIViewController {
                     image.draw(in: areaSize)
                 }
         }
-        
-//         for i in 1..<lads.count {
-//             var image: UIImage
-//             let curentLad = lads[i]
-//
-//            if i == 1 {
-//
-//                for j in 0..<lads[i].strings.count {
-//                    if j == 0  {
-//                        // только для первой струны
-//
-//                        switch curentLad.strings[j] {
-//                        case StatusString.closed:
-//                            image = UIImage(named: "6_x")!
-//                        case StatusString.open:
-//                            image = UIImage(named: "6_empty")!
-//                        case StatusString.played:
-//                            image = UIImage(named: "6_o")!
-//                        }
-//
-//                        if curentLad.strings[j] == StatusString.closed {
-//
-//                        }
-//
-//                    } else {
-//
-//                    //  остальные струны
-//                    }
-//                }
-//
-//
-//
-//            } else {
-//
-//
-//             for j in 0..<lads[i].strings.count {
-//
-//                if j == 0  {
-//                    // только для первой струны
-//                  //  if curentLad.strings[j] == StatusString.closed {
-//
-//                    }
-//
-//                    continue
-//                }
-//
-//                if lads[i].strings[j] == StatusString.open {
-//                     image = im1
-//                 } else {
-//                     image = im2
-//                 }
-//
-//                 let x = j * 24 + 24
-//                 let y = i * 24
-//
-//                 let areaSize =  CGRect(x: x, y: y, width: 24, height: 24)
-//                 image.draw(in: areaSize)
-//             }
-//            }
-//         }
      }
     
     private func getShemesStrings(from lad: Lad) -> [ShemeString] {
@@ -183,7 +169,6 @@ class PngViewController: UIViewController {
             if iPast > -1 {
                 strladIm.start = closedChemeString(for: arrayShemeStrings[iPast].end)
             }
-             
                 switch lad.strings[i] {
                 case StatusString.open:
                     strladIm.end = "o"
@@ -230,27 +215,6 @@ class PngViewController: UIViewController {
                oneLad.strings[i] = StatusString.closed
             }
         }
-    }
-    
-    
-    private func createGriffOLD() {
-      var image: UIImage
-        let step = 200
-            let grif = lads[0]
-    
-            for j in 0..<grif.strings.count {
-                if grif.strings[j] == StatusString.open {
-                    image = im1
-                } else {
-                    image = im2
-                }
-    
-                let x = j * step + step
-                let y =  0
-    
-                let areaSize =  CGRect(x: x, y: y, width: 24, height: 24)
-                image.draw(in: areaSize)
-            }
     }
     
     private func createGriff() {
