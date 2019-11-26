@@ -18,6 +18,7 @@ class PngViewController: UIViewController {
     private var quantitiPlayedStrings = 0
     private let offsetBareLine = 225
     private let widthBareLine = 10
+    private var isBarre = false
     
     @IBOutlet weak var png: UIImageView!
     @IBAction func share(_ sender: UIBarButtonItem) {
@@ -45,10 +46,10 @@ class PngViewController: UIViewController {
     private func createPNG() {
         UIGraphicsBeginImageContext(size)
         
-      // createGriff()
+       createGriff()
         createBarreLine()
-     //   createAckord()
-     //   createLadImage()
+        createAckord()
+        createLadImage()
         
         let  newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
@@ -87,38 +88,44 @@ class PngViewController: UIViewController {
                  
              }
         
-       // if quantitiPlayedStrings > 4 {
+    //    if quantitiPlayedStrings > 4 {
             drowBarre(from: maxStringInFirstlad)
-       // }
+     //   }
         
         print("maxStringInFirstlad" , maxStringInFirstlad )
                print("quantitiPlayedStrings", quantitiPlayedStrings)
     }
     
     private func drowBarre(from: Int) {
-        let step = from * 188 + 188
+        let step = from * 200 + 200
         print("step", step)
         let context = UIGraphicsGetCurrentContext()!
         print(context)
         
-        let endPoint = size.width - 188
+        let endPoint = size.width - 200
         
-        context.setLineWidth(5.0)
-    //    context.setStrokeColor(UIColor.black.cgColor)
- //       context.move(to: CGPoint(x: step, y: 225))
-  //      context.addLine(to: CGPoint(x: endPoint, y: 225))
-  //      context.strokePath()
+        context.setLineWidth(45.0)
+        context.setStrokeColor(UIColor.black.cgColor)
+        context.move(to: CGPoint(x: step, y: 225))
+        context.addLine(to: CGPoint(x: endPoint, y: 225))
+        context.strokePath()
         
-        context.setStrokeColor(UIColor.red.cgColor)
+        context.setStrokeColor(UIColor.black.cgColor)
         //context.setAlpha(0.5)
-        //context.setLineWidth(10.0)
+        context.setLineWidth(10.0)
     //    context.addArc(center: CGPoint(x: 500, y: 500), radius: 400, startAngle: 0, endAngle: 90, clockwise: true)
         
-        let ab = 1314.0/2
-        let c = 50.0
-        let d = Double (ab * ab) / c
+//        let ab = 2000.0/2
+//        let c = 200.0
+//        let d = Double (ab * ab) / c
+//        let r = (d + c )/2
+//        let point = CGPoint(x:700, y: r + 170 )
+//        let angl = acos(Double ((ab/2)/r))
+        let ab = (2000.0  - Double (from * 400)) / 2
+        let c = 200.0
+        let d = Double (ab  * ab) / c
         let r = (d + c )/2
-        let point = CGPoint(x:500, y:0 - r)
+        let point = CGPoint(x:700 + Double (from * 100), y: r + 160 )
         let angl = acos(Double ((ab/2)/r))
 
         print("a = \(ab)  b = \(ab)  c = \(c)  r = \(r) po = \(point) abgle = \(angl)")
@@ -126,9 +133,9 @@ class PngViewController: UIViewController {
        //context.addArc(tangent1End: CGPoint(x: 5, y: 5), tangent2End: CGPoint(x: 10, y: 10), radius: 8000)
        // context.addArc(center: point, radius: CGFloat (r), startAngle: CGFloat (((180 * 3.14)/180) + angl), endAngle: CGFloat (((360 * 3.14)/180) - angl), clockwise: true)
         
-        context.addArc(center: point, radius: CGFloat (r), startAngle: CGFloat (3.1416 + angl), endAngle: CGFloat (6.2832 - angl), clockwise: true)
+        context.addArc(center: point, radius: CGFloat (r), startAngle: CGFloat (3.1416 + angl), endAngle: CGFloat (6.2832 - angl), clockwise: false)
        // context.addEllipse(in: CGRect(x: 188, y: 100, width:  657 * 2, height: 657 * 2))
-     //   context.drawPath(using: .stroke) // or .fillStroke if need filling
+        context.drawPath(using: .stroke) // or .fillStroke if need filling
 
         
         
@@ -139,7 +146,8 @@ class PngViewController: UIViewController {
        
          for i in 1..<lads.count {
             
-            let shmeme =  getShemesStrings(from: lads[i])
+       //     let shmeme =  getShemesStrings(from: lads[i]) // для варианта с баре и зажатой струной
+            let shmeme =  getShemesStringsForTwoVariant(from: lads[i])
         
              var image: UIImage
                 let step = 200
@@ -191,6 +199,55 @@ class PngViewController: UIViewController {
         }
         return arrayShemeStrings
     }
+    
+    private func getShemesStringsForTwoVariant(from lad: Lad) -> [ShemeString] {
+        var arrayShemeStrings = [ShemeString]()
+        print("lad", lad.id)
+        
+        for i in 0..<6 {
+            
+            let iPast = i - 1
+            
+            let strladIm = ShemeString()
+            
+            if iPast > -1 {
+                   print("11111111")
+                if quantitiPlayedStrings > 4 && lad.id < 2 {
+                    print("dhjkdh jqdh lq")
+                strladIm.start = "o"
+                }
+                strladIm.start = closedChemeString(for: arrayShemeStrings[iPast].end)
+            }
+                switch lad.strings[i] {
+                case StatusString.open:
+                    strladIm.end = "o"
+                case StatusString.closed:
+                    strladIm.end = ")"
+                case StatusString.played:
+                    if quantitiPlayedStrings > 4 && lad.id < 2 {
+                         strladIm.end = "o"
+                    } else{
+                    
+                    strladIm.end = "("
+                    }
+            }
+
+            arrayShemeStrings.append( strladIm)
+            print(i, strladIm.start, strladIm.end)
+            
+            if i == 5 {
+                let end = ShemeString()
+                end.start = "1"
+                end.end = closedChemeString(for: arrayShemeStrings[5].end)
+                arrayShemeStrings.append(end)
+                print(end.start, end.end)
+            }
+        }
+        return arrayShemeStrings
+    }
+    
+    
+    
     
     private func closedChemeString(for input : String) -> String {
         switch input {
