@@ -16,7 +16,7 @@ class ShemmeMaker {
         self.quantitiPlayedStrings = quantitiPlayedStrings
     }
     
-    private class ShemeString {
+    class ShemeString {
         var start = "6"
         var end = "o"
         
@@ -25,7 +25,7 @@ class ShemmeMaker {
         }
     }
     
-    private func getShemesStrings(from lad: Lad) -> [ShemeString] {
+     func getShemesStrings(from lad: Lad) -> [ShemeString] {
         var arrayShemeStrings = [ShemeString]()
         
         for i in 0..<6 {
@@ -60,10 +60,9 @@ class ShemmeMaker {
         return arrayShemeStrings
     }
     
-    private func getShemesStringsForTwoVariant(from lad: Lad) -> [ShemeString] {
+     func getShemesStringsForTwoVariant(from lad: Lad) -> [ShemeString] {
         var arrayShemeStrings = [ShemeString]()
-        print("lad", lad.id)
-        print("quantitiPlayedStrings", quantitiPlayedStrings)
+        
         for i in 0..<6 {
             
             let iPast = i - 1
@@ -71,13 +70,12 @@ class ShemmeMaker {
             let strladIm = ShemeString()
             
             if iPast > -1 {
-                print("11111111")
                 if quantitiPlayedStrings > 4 && lad.id < 2 {
-                    print("dhjkdh jqdh lq")
                     strladIm.start = "o"
                 }
                 strladIm.start = closedChemeString(for: arrayShemeStrings[iPast].end)
             }
+            
             switch lad.strings[i] {
             case StatusString.open:
                 strladIm.end = "o"
@@ -105,9 +103,6 @@ class ShemmeMaker {
         }
         return arrayShemeStrings
     }
-    
-    
-    
     
     private func closedChemeString(for input : String) -> String {
         switch input {

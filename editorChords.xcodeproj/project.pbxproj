@@ -17,8 +17,9 @@
 		601B2D4B234DD61E003A87C4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601B2D4A234DD61E003A87C4 /* TableViewCell.swift */; };
 		D1223BF62372BB4C00136E44 /* editorChordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1223BF52372BB4C00136E44 /* editorChordsTests.swift */; };
 		D1223BFE2372F5F800136E44 /* PngViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1223BFD2372F5F800136E44 /* PngViewController.swift */; };
-		D1E4B1EB238D4123008D798B /* DrawBare.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E4B1EA238D4123008D798B /* DrawBare.swift */; };
+		D1E4B1EB238D4123008D798B /* BareMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E4B1EA238D4123008D798B /* BareMaker.swift */; };
 		D1E4B1ED238D415D008D798B /* ShemeMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E4B1EC238D415D008D798B /* ShemeMaker.swift */; };
+		D1E4B1EF238D50CB008D798B /* ChordMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E4B1EE238D50CB008D798B /* ChordMaker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +47,9 @@
 		D1223BF52372BB4C00136E44 /* editorChordsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editorChordsTests.swift; sourceTree = "<group>"; };
 		D1223BF72372BB4C00136E44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = editorChordsTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		D1223BFD2372F5F800136E44 /* PngViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PngViewController.swift; sourceTree = "<group>"; };
-		D1E4B1EA238D4123008D798B /* DrawBare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawBare.swift; sourceTree = "<group>"; };
+		D1E4B1EA238D4123008D798B /* BareMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BareMaker.swift; sourceTree = "<group>"; };
 		D1E4B1EC238D415D008D798B /* ShemeMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShemeMaker.swift; sourceTree = "<group>"; };
+		D1E4B1EE238D50CB008D798B /* ChordMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordMaker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +101,7 @@
 				601B2D40234DD328003A87C4 /* Info.plist */,
 				601B2D46234DD341003A87C4 /* Lad.swift */,
 				D1223BFD2372F5F800136E44 /* PngViewController.swift */,
-				D1E4B1EA238D4123008D798B /* DrawBare.swift */,
-				D1E4B1EC238D415D008D798B /* ShemeMaker.swift */,
+				D1E4B1F0238D50DD008D798B /* Makers */,
 			);
 			path = editorChords;
 			sourceTree = "<group>";
@@ -112,6 +113,16 @@
 				D1223BF52372BB4C00136E44 /* editorChordsTests.swift */,
 			);
 			path = editorChordsTests;
+			sourceTree = "<group>";
+		};
+		D1E4B1F0238D50DD008D798B /* Makers */ = {
+			isa = PBXGroup;
+			children = (
+				D1E4B1EA238D4123008D798B /* BareMaker.swift */,
+				D1E4B1EE238D50CB008D798B /* ChordMaker.swift */,
+				D1E4B1EC238D415D008D798B /* ShemeMaker.swift */,
+			);
+			path = Makers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,7 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1E4B1EB238D4123008D798B /* DrawBare.swift in Sources */,
+				D1E4B1EB238D4123008D798B /* BareMaker.swift in Sources */,
 				601B2D4B234DD61E003A87C4 /* TableViewCell.swift in Sources */,
 				601B2D47234DD341003A87C4 /* Lad.swift in Sources */,
 				601B2D37234DD326003A87C4 /* ViewController.swift in Sources */,
@@ -223,6 +234,7 @@
 				D1E4B1ED238D415D008D798B /* ShemeMaker.swift in Sources */,
 				D1223BFE2372F5F800136E44 /* PngViewController.swift in Sources */,
 				601B2D49234DD4F8003A87C4 /* TableViewController.swift in Sources */,
+				D1E4B1EF238D50CB008D798B /* ChordMaker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
