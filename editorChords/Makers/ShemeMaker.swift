@@ -10,10 +10,10 @@ import Foundation
 
 class ShemmeMaker {
     
-    let quantitiPlayedStrings: Int
+    let isBare: Bool
     
-    init(quantitiPlayedStrings: Int) {
-        self.quantitiPlayedStrings = quantitiPlayedStrings
+    init(with bare: Bool) {
+        self.isBare = bare
     }
     
     class ShemeString {
@@ -47,14 +47,14 @@ class ShemmeMaker {
             }
             
             arrayShemeStrings.append( strladIm)
-            print(i, strladIm.start, strladIm.end)
+            //print(i, strladIm.start, strladIm.end)
             
             if i == 5 {
                 let end = ShemeString()
                 end.start = "1"
                 end.end = closedChemeString(for: arrayShemeStrings[5].end)
                 arrayShemeStrings.append(end)
-                print(end.start, end.end)
+              //  print(end.start, end.end)
             }
         }
         return arrayShemeStrings
@@ -70,7 +70,7 @@ class ShemmeMaker {
             let strladIm = ShemeString()
             
             if iPast > -1 {
-                if quantitiPlayedStrings > 4 && lad.id < 2 {
+                if isBare  && lad.id < 2 {
                     strladIm.start = "o"
                 }
                 strladIm.start = closedChemeString(for: arrayShemeStrings[iPast].end)
@@ -82,7 +82,7 @@ class ShemmeMaker {
             case StatusString.closed:
                 strladIm.end = ")"
             case StatusString.played:
-                if quantitiPlayedStrings > 4 && lad.id < 2 {
+                if isBare && lad.id < 2 {
                     strladIm.end = "o"
                 } else{
                     
@@ -91,14 +91,14 @@ class ShemmeMaker {
             }
             
             arrayShemeStrings.append( strladIm)
-            print(i, strladIm.start, strladIm.end)
+         //   print(i, strladIm.start, strladIm.end)
             
             if i == 5 {
                 let end = ShemeString()
                 end.start = "1"
                 end.end = closedChemeString(for: arrayShemeStrings[5].end)
                 arrayShemeStrings.append(end)
-                print(end.start, end.end)
+             //   print(end.start, end.end)
             }
         }
         return arrayShemeStrings

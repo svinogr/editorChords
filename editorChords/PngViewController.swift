@@ -10,6 +10,7 @@ import UIKit
 
 class PngViewController: UIViewController {
     var lads: [Lad]!
+    var isBare: Bool!
     
     @IBOutlet weak var png: UIImageView!
     @IBAction func share(_ sender: UIBarButtonItem) {
@@ -23,7 +24,7 @@ class PngViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let chordMaker = ChordMaker(lads: lads)
+        let chordMaker = ChordMaker(lads: lads, isBare: isBare)
         png.image = chordMaker.getFinalChordPic()
         // Do any additional setup after loading the view.
     }

@@ -16,26 +16,64 @@ class ChordMaker {
     private var shemeMaker: ShemmeMaker!
     private var context: CGContext!
     private var quantitiPlayedStrings = 0
+    private var isBare =  false
     
-    init(lads: [Lad]) {
+    init(lads: [Lad], isBare: Bool = true ) {
         self.lads = lads
-        analizeQuantityPlayedStrings()
+      
+        if isBare {
+        analizeBare()
+        }
+        
         UIGraphicsBeginImageContext(sizeFinalPic)
         self.context = UIGraphicsGetCurrentContext()!
         self.lads = lads
         self.bareMaker = BareMaker(lads: lads, context: context)
-        self.shemeMaker = ShemmeMaker(quantitiPlayedStrings: quantitiPlayedStrings)
+        self.shemeMaker = ShemmeMaker(with: isBare)
     }
     
-    private func analizeQuantityPlayedStrings()  {
+    private func analizeQuantityPlayedStrings() {
         for id in 1..<lads.count {
+    
             for str in lads[id].strings {
                 if str == StatusString.played {
                  quantitiPlayedStrings = quantitiPlayedStrings + 1
                 }
             }
-            
         }
+    }
+    
+    
+    private func playedLads() -> Int {
+        var playedLad = 0
+        
+        for id in 1..<lads.count {
+            
+            for str in lads[id].strings {
+                if str == StatusString.played {
+                    playedLad += 1
+                    break
+                }
+            }
+        }
+        print("playedLads", playedLad)
+        return playedLad
+    }
+    
+    private func analizeBare() {
+        analizeQuantityPlayedStrings()
+        
+        switch quantitiPlayedStrings {
+        case 5... :
+            isBare = true
+        case 4:
+            if playedLads() > 2 {
+                isBare = true
+            }
+        default:
+            print("error in anilize lads")
+        }
+        
     }
     
     
@@ -43,9 +81,13 @@ class ChordMaker {
         reinitializedFirstLadWithClosedStrings()
         
         for i in 1..<lads.count {
+            var shmeme: [ShemmeMaker.ShemeString]
             
-            let shmeme = shemeMaker.getShemesStringsForTwoVariant(from: lads[i]) // несколько вариантов
-            //let shmeme = shemeMaker.getShemesStrings(from: lads[i]) // несколько вариантов
+            if isBare {
+                 shmeme = shemeMaker.getShemesStringsForTwoVariant(from: lads[i]) // несколько вариантов
+            } else {
+                 shmeme = shemeMaker.getShemesStrings(from: lads[i]) // несколько вариантов
+            }
             
             var image: UIImage
             let stepX = 200
@@ -96,7 +138,9 @@ class ChordMaker {
        }
     
     private func createBareLine() {
-        bareMaker.createBarreLine()
+        if isBare {
+            bareMaker.createBarreLine()
+        }
     }
        
        private func createLadImage() {

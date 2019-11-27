@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nZa-lV-8wK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nZa-lV-8wK">
     <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -128,11 +128,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Vsc-Bo-3wT">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="cIR-iA-2dx">
-                            <connections>
-                                <segue destination="UZr-Pd-kvq" kind="show" identifier="shouAcckord" id="lJu-9g-ucj"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="save" id="cIR-iA-2dx">
+                                <connections>
+                                    <segue destination="UZr-Pd-kvq" kind="show" identifier="shouAcckord" id="lJu-9g-ucj"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Bare" id="b1H-CG-Ruo">
+                                <connections>
+                                    <action selector="tempBareBtn:" destination="wNc-I3-7Xf" id="sgt-uB-TOh"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yyV-aX-x78" userLabel="First Responder" sceneMemberID="firstResponder"/>
