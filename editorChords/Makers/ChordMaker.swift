@@ -62,7 +62,7 @@ class ChordMaker {
     
     private func analizeBare() {
         analizeQuantityPlayedStrings()
-        
+
         switch quantitiPlayedStrings {
         case 5... :
             isBare = true
@@ -171,8 +171,9 @@ class ChordMaker {
     
     func getFinalChordPic() -> UIImage {
         createGriff()
+         createAckord()
         createBareLine()
-        createAckord()
+       
         createLadImage()
         
         let  image: UIImage =  UIGraphicsGetImageFromCurrentImageContext()!

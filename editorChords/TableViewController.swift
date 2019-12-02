@@ -87,18 +87,19 @@ class TableViewController: UITableViewController {
             if flag {
                 break
             }
-            
         }
         
-        print(startLad)
+      //  print(startLad)
        
         var smallAr = [Lad]()
         let grif = lads[0]
+        
         smallAr.append(grif)
         
         for i in startLad..<startLad + 5 {
             //      array[i].printStr()
-            smallAr.append(array[i])
+            
+            smallAr.append(array[i].copy())
         }
         
         return smallAr

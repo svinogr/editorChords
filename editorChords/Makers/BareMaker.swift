@@ -25,6 +25,7 @@ class BareMaker {
         
         for i in 1..<lads.count {
             let max = maxStringForBare(lad: lads[i])
+            
             if maxStringInFirstlad > max {
                 maxStringInFirstlad = max
             }

@@ -12,7 +12,7 @@ class TableViewCell: UITableViewCell {
     var lad: Lad! {
         didSet {
             numberLad.text = String(lad.id)
-          //  buttons = [oneString, twoString, threeString, fourString, fiveString, sixString]
+            //  buttons = [oneString, twoString, threeString, fourString, fiveString, sixString]
             for str in 0..<lad.strings.count {
                 changePicForString(number: str)
             }
@@ -29,27 +29,27 @@ class TableViewCell: UITableViewCell {
     
     @IBAction func SixStringAction(_ sender: Any) {
         let id = 5
-      actionPressStringButton(id: id)
+        actionPressStringButton(id: id)
     }
     
     @IBAction func FiveStringAction(_ sender: Any) {
         let id = 4
-actionPressStringButton(id: id)
+        actionPressStringButton(id: id)
     }
     
     @IBAction func FourStringAction(_ sender: Any) {
         let id = 3
-      actionPressStringButton(id: id)
+        actionPressStringButton(id: id)
     }
     
     @IBAction func ThreStringAction(_ sender: Any) {
         let id = 2
-   actionPressStringButton(id: id)
+        actionPressStringButton(id: id)
     }
     
     @IBAction func TwoStringAction(_ sender: Any) {
         let id = 1
-      actionPressStringButton(id: id)
+        actionPressStringButton(id: id)
     }
     
     @IBAction func OneStringAction(_ sender: Any) {
@@ -58,17 +58,19 @@ actionPressStringButton(id: id)
     }
     
     private func actionPressStringButton(id: Int) {
+        print(self.lad.strings[5 - id])
         if self.lad.strings[5 - id] == StatusString.open {
             self.lad.strings[5 - id] = StatusString.played
         } else {
-             self.lad.strings[5 - id] = StatusString.open
+            self.lad.strings[5 - id] = StatusString.open
         }
         
-       // self.lad.strings[5 - id] =  !self.lad.strings[5 - id]
-       
+        // self.lad.strings[5 - id] =  !self.lad.strings[5 - id]
+        
         if(lad.strings[5 - id] == StatusString.played) {
             diselectOtherstringsInLads(number: 5 - id)
         }
+        
         changePicForString(number: 5 - id)
     }
     
@@ -115,31 +117,28 @@ actionPressStringButton(id: id)
         }
         
         let name = "\(self.lad.id)_\(number)"
-        print(name)
+        //print(name)
         
         if (self.lad.strings[number]) == StatusString.played{
-          //  button!.backgroundImage(for: .normal) = UIImage(named: "1")
+            //  button!.backgroundImage(for: .normal) = UIImage(named: "1")
             
             
             button!.setBackgroundImage(UIImage(named: "\(name)p"), for: .normal)
              
         }else
         {
-       button!.setBackgroundImage(UIImage(named: name), for: .normal)
-            
+            button!.setBackgroundImage(UIImage(named: name), for: .normal)
         }
-        
     }
     
     
     func diselectOtherstringsInLads(number: Int)  {
-        
         for i in lads {
             if i.id != lad.id {
                 i.strings[number] = StatusString.open
-                complision()
             }
         }
+        complision()
     }
     
 }

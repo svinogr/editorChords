@@ -37,4 +37,14 @@ class Lad {
              print(" ")
     }
     
+    func copy() -> Lad {
+        let copy = Lad(id: self.id)
+        
+        for string in 0..<self.strings.count {
+            copy.strings[string] = self.strings[string]
+        }
+        
+        return copy
+    }
+    
 }

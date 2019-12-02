@@ -37,6 +37,7 @@ class ShemmeMaker {
             if iPast > -1 {
                 strladIm.start = closedChemeString(for: arrayShemeStrings[iPast].end)
             }
+            
             switch lad.strings[i] {
             case StatusString.open:
                 strladIm.end = "o"
@@ -62,7 +63,7 @@ class ShemmeMaker {
     
      func getShemesStringsForTwoVariant(from lad: Lad) -> [ShemeString] {
         var arrayShemeStrings = [ShemeString]()
-        
+        print(lad.strings)
         for i in 0..<6 {
             
             let iPast = i - 1

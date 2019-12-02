@@ -21,9 +21,15 @@ class PngViewController: UIViewController {
         
         present(aPV, animated: true, completion: nil)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for l in lads {
+            print(l.printStr())
+        }
+        print("-----------------------")
+        
         let chordMaker = ChordMaker(lads: lads, isBare: isBare)
         png.image = chordMaker.getFinalChordPic()
         // Do any additional setup after loading the view.
