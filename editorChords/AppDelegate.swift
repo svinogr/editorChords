@@ -16,7 +16,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        print(UIDevice.current.userInterfaceIdiom)
+      
+        let vc = getStoryBoard().instantiateInitialViewController()
+        window = UIWindow(frame: UIScreen.main.bounds)
+            //   let vc = UIStoryboard(name: "ipone", bundle: nil).instantiateInitialViewController()
+      self.window?.rootViewController = vc
+  
+        window?.makeKeyAndVisible()
+        print(window == nil)
         return true
+    }
+    
+    private func getStoryBoard() -> UIStoryboard {
+        var storyBoard: UIStoryboard!
+        print(UIDevice.current.userInterfaceIdiom)
+        
+        switch UIDevice.current.userInterfaceIdiom {
+        case .phone:
+            print(1)
+            storyBoard = UIStoryboard(name: "ipone", bundle: nil)
+        case .pad:
+            storyBoard = UIStoryboard(name: "ipad", bundle: nil)
+              print(3)
+        default:
+            print("error")
+        }
+        
+        return storyBoard
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
