@@ -93,9 +93,15 @@ class TableViewController: UITableViewController {
         var smallAr = [Lad]()
         let grif = lads[0]
         
-        smallAr.append(grif)
+        smallAr.append(grif.copy())
         
-        for i in startLad..<startLad + 5 {
+        var endLad = startLad + 5
+                   if endLad > 12 {
+                       endLad = 13
+                       startLad = 8
+                   }
+        
+        for i in startLad..<endLad {
             //      array[i].printStr()
             
             smallAr.append(array[i].copy())

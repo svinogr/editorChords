@@ -17,6 +17,7 @@ class ChordMaker {
     private var context: CGContext!
     private var quantitiPlayedStrings = 0
     private var isBare =  false
+    private let offset = 50
     
     init(lads: [Lad], isBare: Bool = true ) {
         self.lads = lads
@@ -100,7 +101,7 @@ class ChordMaker {
                 let namePic = shmeme[j].toString()
                 image = UIImage(named: namePic)!
                 
-                let x = j * stepX
+                let x = j * stepX + offset
                 let y =  (i - 1) * heightPicChord + offsetFromPorogY
                 
                 let areaSize =  CGRect(x: x, y: y, width: widthPicChord, height: heightPicChord)
@@ -130,7 +131,7 @@ class ChordMaker {
 
                image = UIImage(named: namePic)!
                
-               let x = i * step
+               let x = i * step + offset
                
                let areaSize =  CGRect(x: x, y: 0, width: 200, height: 104)
                image.draw(in: areaSize)
@@ -147,7 +148,7 @@ class ChordMaker {
            let numberOfStartLad = lads[1].id
            var stepForImagePosition = 0
            let textColor = UIColor.black
-           let textFont = UIFont(name: "Menlo", size: 220)!
+           let textFont = UIFont(name: "Menlo", size: 100)!
            
            let textFontAttributes = [
                NSAttributedString.Key.font: textFont,

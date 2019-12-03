@@ -9,13 +9,18 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
+  
     var lad: Lad! {
         didSet {
-            numberLad.text = String(lad.id)
-            //  buttons = [oneString, twoString, threeString, fourString, fiveString, sixString]
-            for str in 0..<lad.strings.count {
-                changePicForString(number: str)
-            }
+            fordidsetLad()
+        }
+    }
+    
+    func fordidsetLad() {
+        numberLad.text = String(lad.id)
+        //  buttons = [oneString, twoString, threeString, fourString, fiveString, sixString]
+        for str in 0..<lad.strings.count {
+            changePicForString(number: str)
         }
     }
     
@@ -72,6 +77,12 @@ class TableViewCell: UITableViewCell {
         }
         
         changePicForString(number: 5 - id)
+        
+        cloAndCompl()
+    }
+    
+    func cloAndCompl() {
+         complision()
     }
     
     
@@ -121,10 +132,7 @@ class TableViewCell: UITableViewCell {
         
         if (self.lad.strings[number]) == StatusString.played{
             //  button!.backgroundImage(for: .normal) = UIImage(named: "1")
-            
-            
             button!.setBackgroundImage(UIImage(named: "\(name)p"), for: .normal)
-             
         }else
         {
             button!.setBackgroundImage(UIImage(named: name), for: .normal)
@@ -138,7 +146,6 @@ class TableViewCell: UITableViewCell {
                 i.strings[number] = StatusString.open
             }
         }
-        complision()
     }
     
 }

@@ -14,12 +14,14 @@
 		601B2D47234DD341003A87C4 /* Lad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601B2D46234DD341003A87C4 /* Lad.swift */; };
 		601B2D49234DD4F8003A87C4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601B2D48234DD4F8003A87C4 /* TableViewController.swift */; };
 		601B2D4B234DD61E003A87C4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601B2D4A234DD61E003A87C4 /* TableViewCell.swift */; };
+		D103A05023963968002AF5FA /* IpadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D103A04F23963968002AF5FA /* IpadViewController.swift */; };
 		D120856F23951F80006307EA /* ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D120856E23951F80006307EA /* ipad.storyboard */; };
 		D1223BF62372BB4C00136E44 /* editorChordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1223BF52372BB4C00136E44 /* editorChordsTests.swift */; };
 		D1223BFE2372F5F800136E44 /* PngViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1223BFD2372F5F800136E44 /* PngViewController.swift */; };
 		D1E4B1EB238D4123008D798B /* BareMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E4B1EA238D4123008D798B /* BareMaker.swift */; };
 		D1E4B1ED238D415D008D798B /* ShemeMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E4B1EC238D415D008D798B /* ShemeMaker.swift */; };
 		D1E4B1EF238D50CB008D798B /* ChordMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E4B1EE238D50CB008D798B /* ChordMaker.swift */; };
+		D1EB90AF23967A170076A668 /* TableViewCellIpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EB90AE23967A170076A668 /* TableViewCellIpad.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,7 @@
 		601B2D46234DD341003A87C4 /* Lad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lad.swift; sourceTree = "<group>"; };
 		601B2D48234DD4F8003A87C4 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		601B2D4A234DD61E003A87C4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		D103A04F23963968002AF5FA /* IpadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IpadViewController.swift; sourceTree = "<group>"; };
 		D120856E23951F80006307EA /* ipad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ipad.storyboard; sourceTree = "<group>"; };
 		D1223BF32372BB4C00136E44 /* editorChordsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = editorChordsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1223BF52372BB4C00136E44 /* editorChordsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editorChordsTests.swift; sourceTree = "<group>"; };
@@ -50,6 +53,7 @@
 		D1E4B1EA238D4123008D798B /* BareMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BareMaker.swift; sourceTree = "<group>"; };
 		D1E4B1EC238D415D008D798B /* ShemeMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShemeMaker.swift; sourceTree = "<group>"; };
 		D1E4B1EE238D50CB008D798B /* ChordMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordMaker.swift; sourceTree = "<group>"; };
+		D1EB90AE23967A170076A668 /* TableViewCellIpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellIpad.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +100,9 @@
 				601B2D38234DD326003A87C4 /* ipone.storyboard */,
 				D120857023951F8D006307EA /* Boards */,
 				601B2D48234DD4F8003A87C4 /* TableViewController.swift */,
+				D103A04F23963968002AF5FA /* IpadViewController.swift */,
 				601B2D4A234DD61E003A87C4 /* TableViewCell.swift */,
+				D1EB90AE23967A170076A668 /* TableViewCellIpad.swift */,
 				601B2D3B234DD328003A87C4 /* Assets.xcassets */,
 				601B2D3D234DD328003A87C4 /* LaunchScreen.storyboard */,
 				601B2D40234DD328003A87C4 /* Info.plist */,
@@ -240,6 +246,8 @@
 				601B2D47234DD341003A87C4 /* Lad.swift in Sources */,
 				601B2D35234DD326003A87C4 /* AppDelegate.swift in Sources */,
 				D1E4B1ED238D415D008D798B /* ShemeMaker.swift in Sources */,
+				D1EB90AF23967A170076A668 /* TableViewCellIpad.swift in Sources */,
+				D103A05023963968002AF5FA /* IpadViewController.swift in Sources */,
 				D1223BFE2372F5F800136E44 /* PngViewController.swift in Sources */,
 				601B2D49234DD4F8003A87C4 /* TableViewController.swift in Sources */,
 				D1E4B1EF238D50CB008D798B /* ChordMaker.swift in Sources */,

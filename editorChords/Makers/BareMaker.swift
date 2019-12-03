@@ -12,7 +12,7 @@ import UIKit
 class BareMaker {
     private let lads: [Lad]
     private let context: CGContext
-    
+    private let offset = 50
     private let size = CGSize(width: 1400, height: 1314)
     
     init(lads: [Lad], context: CGContext) {
@@ -66,11 +66,11 @@ class BareMaker {
         print("step", step)
         // let context = UIGraphicsGetCurrentContext()!
         print(context)
-        let endPoint = size.width - 200
+        let endPoint = size.width - 200 + CGFloat( offset)
         
         context.setLineWidth(45.0)
         context.setStrokeColor(UIColor.black.cgColor)
-        context.move(to: CGPoint(x: step, y: 225))
+        context.move(to: CGPoint(x: step + offset, y: 225))
         context.addLine(to: CGPoint(x: endPoint, y: 225))
         context.strokePath()
         
@@ -82,7 +82,7 @@ class BareMaker {
         let c = 200.0
         let d = Double (ab  * ab) / c
         let r = (d + c )/2
-        let point = CGPoint(x:700 + Double (from * 100), y: r + 160 )
+        let point = CGPoint(x:700  + Double (from * 100 + offset), y: r + 160 )
         let angl = acos(Double ((ab/2)/r))
         
         print("a = \(ab)  b = \(ab)  c = \(c)  r = \(r) po = \(point) abgle = \(angl)")
