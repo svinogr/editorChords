@@ -14,6 +14,8 @@ class IpadViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var png: UIImageView!
     @IBOutlet var switc: UIView!
     
+
+    
     @IBAction func switchBare(_ sender: Any) {
         isBare = !isBare
     }
@@ -34,7 +36,10 @@ class IpadViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         override func viewDidLoad() {
             super.viewDidLoad()
-
+            
+            view.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+            tableView.backgroundView = UIImageView(image: UIImage())
+        
             for i in 0..<13 {
                 let lad = Lad(id: i)
                 lads.append(lad)
@@ -45,8 +50,20 @@ class IpadViewController: UIViewController, UITableViewDelegate, UITableViewData
             tableView.estimatedRowHeight = 400
             tableView.rowHeight = UITableView.automaticDimension
             
+            setupDefaultImag()
         }
-
+    
+    private func setupDefaultImag() {
+        var defaultLad = [Lad]()
+        
+        for i in 0...4 {
+            let lad = Lad(id: i)
+            defaultLad.append(lad)
+        }
+        defaultLad = createArrayAckord(from: defaultLad)
+        chordMaker = ChordMaker(lads: defaultLad, isBare: self.isBare)
+        png.image = chordMaker.getFinalChordPic()
+    }
         // MARK: - Table view data source
 
     
@@ -83,22 +100,6 @@ class IpadViewController: UIViewController, UITableViewDelegate, UITableViewData
              let image  =  self.chordMaker.getFinalChordPic()
              self.png.image = image
     }
-    
-//        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//            let smal = createArrayAckord(from: lads)
-//
-//            let vc = segue.destination as! PngViewController
-//
-//            vc.lads = smal
-//            vc.isBare = isBare
-//
-//    //        for i in smal {
-//    //           // i.printStr()
-//    //           // i.printStrWithNumberStr()
-//    //        }
-//    //
-//        }
 
         private func createArrayAckord(from array: [Lad]) -> [Lad] {
             var startLad = 0
@@ -120,8 +121,6 @@ class IpadViewController: UIViewController, UITableViewDelegate, UITableViewData
                     break
                 }
             }
-            
-          //  print(startLad)
            
             var smallAr = [Lad]()
             let grif = lads[0]
@@ -144,6 +143,4 @@ class IpadViewController: UIViewController, UITableViewDelegate, UITableViewData
             return smallAr
             
         }
-        
-
     }
