@@ -28,7 +28,6 @@ class PngViewController: UIViewController {
         for l in lads {
             print(l.printStr())
         }
-        print("-----------------------")
         
         let chordMaker = ChordMaker(lads: lads, isBare: isBare)
         png.image = chordMaker.getFinalChordPic()
