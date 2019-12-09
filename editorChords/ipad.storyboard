@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8d4-iC-gcj">
-    <device id="ipad12_9" orientation="landscape" layout="fullscreen" appearance="dark"/>
+    <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="5Fc-nh-Vbf" customClass="IpadViewController" customModule="editorChords" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tIt-wr-sUn">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QHJ-4h-gcq">
-                                <rect key="frame" x="20" y="50" width="386" height="954"/>
+                                <rect key="frame" x="20" y="50" width="386" height="1296"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="386" id="a5G-ZV-Fry"/>
@@ -107,7 +107,7 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="sz3-RO-RPo">
-                                <rect key="frame" x="734.5" y="863.5" width="307" height="78"/>
+                                <rect key="frame" x="563.5" y="461" width="307" height="78"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="lastBaseline" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Epy-KF-7Ux">
                                         <rect key="frame" x="0.0" y="0.0" width="307" height="31"/>
@@ -161,7 +161,7 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w6h-Lq-1RE">
-                                <rect key="frame" x="553" y="70" width="670" height="773.5"/>
+                                <rect key="frame" x="553" y="70" width="328" height="371"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="w6h-Lq-1RE" secondAttribute="height" multiplier="519:611" constant="12.862520458265124" id="MCo-j8-cDL"/>
                                 </constraints>
@@ -200,7 +200,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8d4-iC-gcj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tW2-GC-ndt">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
