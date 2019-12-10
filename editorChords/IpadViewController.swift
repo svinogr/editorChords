@@ -22,9 +22,7 @@ class IpadViewController: UIViewController, UITableViewDelegate, UITableViewData
                
                present(aPV, animated: true, completion: nil)
     }
-    
-    
-    
+        
     @IBAction func switchBare(_ sender: Any) {
         isBare = !isBare
     }
@@ -32,6 +30,7 @@ class IpadViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var isBare: Bool = true {
         didSet {
+            print("setImage")
             setImage()
         }
     }

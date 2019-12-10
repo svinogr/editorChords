@@ -31,7 +31,7 @@ class BareMaker {
             }
         }
         print("maxStringInFirstlad", maxStringInFirstlad)
-        print("LadCount", lads.count)
+      
         //    if quantitiPlayedStrings > 4 {
         drowBare(from: maxStringInFirstlad)
         //   }
@@ -63,9 +63,6 @@ class BareMaker {
     
     private func drowBare(from: Int) {
         let step = from * 200 + 200
-        print("step", step)
-        // let context = UIGraphicsGetCurrentContext()!
-        print(context)
         let endPoint = size.width - 200 + CGFloat( offset)
         
         context.setLineWidth(45.0)
@@ -85,7 +82,7 @@ class BareMaker {
         let point = CGPoint(x:700  + Double (from * 100 + offset), y: r + 160 )
         let angl = acos(Double ((ab/2)/r))
         
-        print("a = \(ab)  b = \(ab)  c = \(c)  r = \(r) po = \(point) abgle = \(angl)")
+       // print("a = \(ab)  b = \(ab)  c = \(c)  r = \(r) po = \(point) abgle = \(angl)")
         
         context.addArc(center: point, radius: CGFloat (r), startAngle: CGFloat (3.1416 + angl), endAngle: CGFloat (6.2832 - angl), clockwise: false)
         context.drawPath(using: .stroke) // or .fillStroke if need filling

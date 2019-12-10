@@ -48,32 +48,27 @@ class ShemmeMaker {
             }
             
             arrayShemeStrings.append( strladIm)
-            //print(i, strladIm.start, strladIm.end)
             
             if i == 5 {
                 let end = ShemeString()
                 end.start = "1"
                 end.end = closedChemeString(for: arrayShemeStrings[5].end)
                 arrayShemeStrings.append(end)
-              //  print(end.start, end.end)
             }
         }
         return arrayShemeStrings
     }
     
-     func getShemesStringsForTwoVariant(from lad: Lad) -> [ShemeString] {
-        var arrayShemeStrings = [ShemeString]()
-        print(lad.strings)
-        for i in 0..<6 {
-            
+    
+    func getShemesStringsWithBarre(from lad: Lad) -> [ShemeString] {
+           var arrayShemeStrings = [ShemeString]()
+           print(lad.strings)
+           for i in 0..<6 {
             let iPast = i - 1
             
             let strladIm = ShemeString()
             
             if iPast > -1 {
-                if isBare  && lad.id < 2 {
-                    strladIm.start = "o"
-                }
                 strladIm.start = closedChemeString(for: arrayShemeStrings[iPast].end)
             }
             
@@ -83,27 +78,64 @@ class ShemmeMaker {
             case StatusString.closed:
                 strladIm.end = ")"
             case StatusString.played:
-                if isBare && lad.id < 2 {
-                    strladIm.end = "o"
-                } else{
-                    
-                    strladIm.end = "("
-                }
+                strladIm.end = "o"
             }
             
             arrayShemeStrings.append( strladIm)
-         //   print(i, strladIm.start, strladIm.end)
             
             if i == 5 {
                 let end = ShemeString()
                 end.start = "1"
                 end.end = closedChemeString(for: arrayShemeStrings[5].end)
                 arrayShemeStrings.append(end)
-             //   print(end.start, end.end)
             }
-        }
-        return arrayShemeStrings
-    }
+            
+           }
+        
+           return arrayShemeStrings
+       }
+    
+//     func getShemesStringsWithBarre(from lad: Lad) -> [ShemeString] {
+//        var arrayShemeStrings = [ShemeString]()
+//        print(lad.strings)
+//        for i in 0..<6 {
+//
+//            let iPast = i - 1
+//
+//            let strladIm = ShemeString()
+//
+//            if iPast > -1 {
+//                if isBare  && lad.id < 2 {
+//                    strladIm.start = "o"
+//                }
+//                strladIm.start = closedChemeString(for: arrayShemeStrings[iPast].end)
+//            }
+//
+//            switch lad.strings[i] {
+//            case StatusString.open:
+//                strladIm.end = "o"
+//            case StatusString.closed:
+//                strladIm.end = ")"
+//            case StatusString.played:
+//                if isBare && lad.id < 2 {
+//                    strladIm.end = "o"
+//                } else{
+//                    strladIm.end = "("
+//                }
+//            }
+//
+//            arrayShemeStrings.append( strladIm)
+//         //   print(i, strladIm.start, strladIm.end)
+//
+//            if i == 5 {
+//                let end = ShemeString()
+//                end.start = "1"
+//                end.end = closedChemeString(for: arrayShemeStrings[5].end)
+//                arrayShemeStrings.append(end)
+//            }
+//        }
+//        return arrayShemeStrings
+//    }
     
     private func closedChemeString(for input : String) -> String {
         switch input {

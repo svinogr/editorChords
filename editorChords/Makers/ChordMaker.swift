@@ -12,7 +12,7 @@ import UIKit
 class ChordMaker {
     private let sizeFinalPic = CGSize(width: 1400, height: 1314)
     private var lads: [Lad]
-    private var bareMaker: BareMaker!
+ //   private var bareMaker: BareMaker!
     private var shemeMaker: ShemmeMaker!
     private var context: CGContext!
     private var quantitiPlayedStrings = 0
@@ -29,11 +29,13 @@ class ChordMaker {
         UIGraphicsBeginImageContext(sizeFinalPic)
         self.context = UIGraphicsGetCurrentContext()!
         self.lads = lads
-        self.bareMaker = BareMaker(lads: lads, context: context)
+       // self.bareMaker = BareMaker(lads: lads, context: context)
         self.shemeMaker = ShemmeMaker(with: isBare)
     }
     
     private func analizeQuantityPlayedStrings() {
+        quantitiPlayedStrings = 0
+        
         for id in 1..<lads.count {
     
             for str in lads[id].strings {
@@ -43,7 +45,6 @@ class ChordMaker {
             }
         }
     }
-    
     
     private func playedLads() -> Int {
         var playedLad = 0
@@ -73,23 +74,25 @@ class ChordMaker {
             }
         default:
             print("error in anilize lads")
+            isBare = false
         }
-        
     }
-    
-    
+    // рисуем для кажого лада в соответсвии с получаемой схемой в цикле
     private func createAckord() {
         reinitializedFirstLadWithClosedStrings()
         
+        print("-------------------------------")
         for i in 1..<lads.count {
             var shmeme: [ShemmeMaker.ShemeString]
+            print("isBare", isBare)
             
-            if isBare {
-                 shmeme = shemeMaker.getShemesStringsForTwoVariant(from: lads[i]) // несколько вариантов
+            if isBare && i < 2  {
+                 shmeme = shemeMaker.getShemesStringsWithBarre(from: lads[i]) // несколько вариантов
             } else {
                  shmeme = shemeMaker.getShemesStrings(from: lads[i]) // несколько вариантов
             }
             
+            print(shmeme)
             var image: UIImage
             let stepX = 200
             
@@ -99,6 +102,7 @@ class ChordMaker {
             
             for j in 0..<shmeme.count {
                 let namePic = shmeme[j].toString()
+                print(namePic)
                 image = UIImage(named: namePic)!
                 
                 let x = j * stepX + offset
@@ -140,6 +144,7 @@ class ChordMaker {
     
     private func createBareLine() {
         if isBare {
+           let bareMaker = BareMaker(lads: lads, context: context)
             bareMaker.createBarreLine()
         }
     }
