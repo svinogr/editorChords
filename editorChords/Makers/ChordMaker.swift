@@ -10,18 +10,21 @@ import Foundation
 import UIKit
 
 class ChordMaker {
-    private let sizeFinalPic = CGSize(width: 1400, height: 1314)
+    static let offsetForLabel = 150
+    static let offsetForLeft = 50
+    private let sizeFinalPic = CGSize(width: 1400 + offsetForLeft, height: 1314 + offsetForLabel)
+    
     private var lads: [Lad]
- //   private var bareMaker: BareMaker!
     private var shemeMaker: ShemmeMaker!
     private var context: CGContext!
     private var quantitiPlayedStrings = 0
     private var isBare =  false
     private let offset = 50
+    private var label: String
     
-    init(lads: [Lad], isBare: Bool = true ) {
+    init(lads: [Lad], isBare: Bool = true, label: String = "" ) {
         self.lads = lads
-      
+        self.label = label
         if isBare {
         analizeBare()
         }
@@ -81,10 +84,8 @@ class ChordMaker {
     private func createAckord() {
         reinitializedFirstLadWithClosedStrings()
         
-        print("-------------------------------")
         for i in 1..<lads.count {
             var shmeme: [ShemmeMaker.ShemeString]
-            print("isBare", isBare)
             
             if isBare && i < 2  {
                  shmeme = shemeMaker.getShemesStringsWithBarre(from: lads[i]) // несколько вариантов
@@ -92,7 +93,6 @@ class ChordMaker {
                  shmeme = shemeMaker.getShemesStrings(from: lads[i]) // несколько вариантов
             }
             
-            print(shmeme)
             var image: UIImage
             let stepX = 200
             
@@ -102,11 +102,10 @@ class ChordMaker {
             
             for j in 0..<shmeme.count {
                 let namePic = shmeme[j].toString()
-                print(namePic)
                 image = UIImage(named: namePic)!
                 
-                let x = j * stepX + offset
-                let y =  (i - 1) * heightPicChord + offsetFromPorogY
+                let x = j * stepX + offset + ChordMaker.offsetForLeft
+                let y =  (i - 1) * heightPicChord + offsetFromPorogY + ChordMaker.offsetForLabel
                 
                 let areaSize =  CGRect(x: x, y: y, width: widthPicChord, height: heightPicChord)
                 image.draw(in: areaSize)
@@ -135,9 +134,10 @@ class ChordMaker {
 
                image = UIImage(named: namePic)!
                
-               let x = i * step + offset
+               let x = i * step + offset + ChordMaker.offsetForLeft
+               let y = 0 + ChordMaker.offsetForLabel
                
-               let areaSize =  CGRect(x: x, y: 0, width: 200, height: 104)
+               let areaSize =  CGRect(x: x, y: y, width: 200, height: 104)
                image.draw(in: areaSize)
            }
        }
@@ -149,12 +149,29 @@ class ChordMaker {
         }
     }
        
+    func drawLabel(text: String) {
+        let textColor = UIColor.black
+        let textFont = UIFont(name: "Menlo", size: 120)!
+        
+        let textFontAttributes = [
+                      NSAttributedString.Key.font: textFont,
+                      NSAttributedString.Key.foregroundColor: textColor,
+                  ]
+        
+        let xLetter = 350 +  ChordMaker.offsetForLeft
+        let yLetter = 10
+        let areaSizeLad = CGRect(x: xLetter, y: yLetter, width: 800, height: 120)
+        
+        text.draw(in: areaSizeLad, withAttributes: textFontAttributes)
+    }
+    
        private func createLadImage() {
            let numberOfStartLad = lads[1].id
            var stepForImagePosition = 0
-           let textColor = UIColor.black
-           let textFont = UIFont(name: "Menlo", size: 100)!
-           
+        
+        let textColor = UIColor.black
+        let textFont = UIFont(name: "Menlo", size: 100)!
+        
            let textFontAttributes = [
                NSAttributedString.Key.font: textFont,
                NSAttributedString.Key.foregroundColor: textColor,
@@ -165,21 +182,25 @@ class ChordMaker {
                
                let letter = String(i)
                
-               let xLetter = 0
-               let yLetter = stepForImagePosition * 242 + 104
+               let xLetter = 0 + ChordMaker.offsetForLeft
+               let yLetter = stepForImagePosition * 242 + 104 + ChordMaker.offsetForLabel
                let areaSizeLad = CGRect(x: xLetter, y: yLetter, width: 200, height: 242)
-               
-               UIGraphicsEndImageContext()
+                 UIGraphicsEndImageContext()
+         
                letter.draw(in: areaSizeLad, withAttributes: textFontAttributes)
                stepForImagePosition = stepForImagePosition + 1
            }
        }
     
+    func createLabel() {
+        drawLabel(text: label)
+    }
+    
     func getFinalChordPic() -> UIImage {
         createGriff()
-         createAckord()
+        createAckord()
+        createLabel()
         createBareLine()
-       
         createLadImage()
         
         let  image: UIImage =  UIGraphicsGetImageFromCurrentImageContext()!

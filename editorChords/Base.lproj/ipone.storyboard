@@ -128,18 +128,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Vsc-Bo-3wT">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="save" id="cIR-iA-2dx">
-                                <connections>
-                                    <segue destination="UZr-Pd-kvq" kind="show" identifier="shouAcckord" id="lJu-9g-ucj"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Bare" id="b1H-CG-Ruo">
-                                <connections>
-                                    <action selector="tempBareBtn:" destination="wNc-I3-7Xf" id="sgt-uB-TOh"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="cIR-iA-2dx">
+                            <connections>
+                                <segue destination="UZr-Pd-kvq" kind="show" identifier="shouAcckord" id="lJu-9g-ucj"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yyV-aX-x78" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -176,6 +169,9 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="om0-na-wuZ">
                                 <rect key="frame" x="251" y="408.5" width="51" height="31"/>
+                                <connections>
+                                    <action selector="barre:" destination="UZr-Pd-kvq" eventType="valueChanged" id="eAR-h7-UoQ"/>
+                                </connections>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -216,8 +212,8 @@
                                 <exclude reference="ZCO-8p-CRU"/>
                                 <exclude reference="7ek-6B-UZ1"/>
                                 <exclude reference="rXH-74-CqC"/>
-                                <exclude reference="r64-9h-PbX"/>
                                 <exclude reference="jrk-n3-Ist"/>
+                                <exclude reference="r64-9h-PbX"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
@@ -238,12 +234,12 @@
                                 <exclude reference="PL1-N8-PVR"/>
                                 <exclude reference="lyO-Od-LYp"/>
                                 <include reference="rXH-74-CqC"/>
-                                <exclude reference="8ho-mL-UVv"/>
-                                <exclude reference="Tcu-8w-WIg"/>
-                                <include reference="r64-9h-PbX"/>
                                 <exclude reference="TRv-Tm-0u6"/>
                                 <exclude reference="aSh-1c-TBk"/>
                                 <include reference="jrk-n3-Ist"/>
+                                <exclude reference="8ho-mL-UVv"/>
+                                <exclude reference="Tcu-8w-WIg"/>
+                                <include reference="r64-9h-PbX"/>
                             </mask>
                         </variation>
                     </view>
@@ -255,6 +251,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="chordLabel" destination="mqn-r6-kBm" id="OEb-5g-ZF0"/>
                         <outlet property="png" destination="Slz-CN-N4S" id="jLb-Ql-Lqe"/>
                     </connections>
                 </viewController>
@@ -268,7 +265,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nZa-lV-8wK" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xPe-hR-KMe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

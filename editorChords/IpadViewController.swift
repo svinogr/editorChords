@@ -30,7 +30,6 @@ class IpadViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var isBare: Bool = true {
         didSet {
-            print("setImage")
             setImage()
         }
     }
@@ -42,6 +41,8 @@ class IpadViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupKeyboard()
         
         view.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         tableView.backgroundView = UIImageView(image: UIImage())
@@ -100,12 +101,36 @@ class IpadViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell!
     }
     
+    
     func setImage() {
         let lad = self.createArrayAckord(from: self.lads)
         self.chordMaker  = ChordMaker(lads: lad, isBare: self.isBare)
         let image  =  self.chordMaker.getFinalChordPic()
         self.png.image = image
     }
+    
+    private func setupKeyboard() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIWindow.keyboardWillShowNotification   , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIWindow.keyboardDidHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let userInfo = notification.userInfo else {return}
+        guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {return}
+        let keyboardFrame = keyboardSize.cgRectValue
+        if self.view.frame.origin.y == 0{self.view.frame.origin.y -= keyboardFrame.height
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        guard let userInfo = notification.userInfo else {return}
+              guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {return}
+              let keyboardFrame = keyboardSize.cgRectValue
+             if self.view.frame.origin.y != 0{self.view.frame.origin.y += keyboardFrame.height
+              }
+    }
+    
+    
     
     private func createArrayAckord(from array: [Lad]) -> [Lad] {
         var startLad = 0

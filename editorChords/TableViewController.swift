@@ -10,9 +10,7 @@ import UIKit
 
 class TableViewController: UITableViewController {
     var isBare: Bool = false
-    @IBAction func tempBareBtn(_ sender: UIBarButtonItem) {
-        isBare = !isBare
-    }
+
     var lads = [Lad]()
 
     override func viewDidLoad() {
@@ -58,7 +56,6 @@ class TableViewController: UITableViewController {
         let vc = segue.destination as! PngViewController
         
         vc.lads = smal
-        vc.isBare = isBare
         
 //        for i in smal {
 //           // i.printStr()

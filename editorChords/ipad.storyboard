@@ -101,7 +101,7 @@
                                 </prototypes>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w6h-Lq-1RE">
-                                <rect key="frame" x="450" y="70" width="560" height="525"/>
+                                <rect key="frame" x="449.5" y="70" width="560" height="525.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="525.5" id="U9g-dv-71b"/>
                                     <constraint firstAttribute="width" constant="560" id="cQs-VM-17M"/>
@@ -161,7 +161,7 @@
                         <viewLayoutGuide key="safeArea" id="ktQ-rm-DqW"/>
                     </view>
                     <navigationItem key="navigationItem" id="Saz-80-cjE">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="vMp-WG-8TF">
+                        <barButtonItem key="rightBarButtonItem" title="Preview" id="vMp-WG-8TF">
                             <connections>
                                 <action selector="share:" destination="5Fc-nh-Vbf" id="rPj-hu-J1c"/>
                             </connections>
