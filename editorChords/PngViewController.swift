@@ -22,13 +22,18 @@ class PngViewController: UIViewController {
     
     @IBOutlet weak var png: UIImageView!
     
+    // в зависимотси от isGetImage apDele идет или шаринг или отправка обратно в приложение
     @IBAction func share(_ sender: UIBarButtonItem) {
-        let aPV = UIActivityViewController(activityItems: [png.image!], applicationActivities: nil)
-        
-        aPV.popoverPresentationController?.barButtonItem = sender
-        aPV.popoverPresentationController?.permittedArrowDirections = .any
-        
-        present(aPV, animated: true, completion: nil)
+        if AppDelegate.isGetImage {
+            print("send back to chords")
+        }else {
+            let aPV = UIActivityViewController(activityItems: [png.image!], applicationActivities:  nil)
+            
+            aPV.popoverPresentationController?.barButtonItem = sender
+            aPV.popoverPresentationController?.permittedArrowDirections = .any
+            
+            present(aPV, animated: true, completion: nil)
+        }
     }
     
     @IBAction func barre(_ sender: Any) {

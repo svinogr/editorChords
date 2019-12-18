@@ -12,19 +12,37 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    static var isGetImage = false
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        print(UIDevice.current.userInterfaceIdiom)
-      
         let vc = getStoryBoard().instantiateInitialViewController()
         window = UIWindow(frame: UIScreen.main.bounds)
             //   let vc = UIStoryboard(name: "ipone", bundle: nil).instantiateInitialViewController()
-      self.window?.rootViewController = vc
+        self.window?.rootViewController = vc
   
         window?.makeKeyAndVisible()
         print(window == nil)
+        return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+       print("2222")
+        let urlComp = URLComponents(url: url, resolvingAgainstBaseURL: true)
+        
+        guard  let params = urlComp?.queryItems! else {
+            return true
+        }
+        
+        for param in params {
+            print(param)
+            if param.name == "getImage" && param.value == "true"{
+                AppDelegate.self.isGetImage = true
+                print(AppDelegate.isGetImage)
+            }
+        }
+
         return true
     }
     
