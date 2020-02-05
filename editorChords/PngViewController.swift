@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class PngViewController: UIViewController {
+class PngViewController: UIViewController, GADBannerViewDelegate {
     var lads: [Lad]!
     var  chordMaker: ChordMaker!
+    @IBOutlet weak var banner: GADBannerView!
     
     var isBare =  true {
     didSet {
@@ -47,6 +49,18 @@ class PngViewController: UIViewController {
         setupKeyboard()
         
         setupImage()
+
+        setupBanner()
+        
+    }
+private func setupBanner() {
+        //banner = GADBannerView(adSize: kGADAdSizeBanner)
+        banner!.adUnitID = "ca-app-pub-3940256099942544/2934735716" // поменять на свою
+        banner!.rootViewController = self
+        banner!.load(GADRequest())
+        banner!.delegate = self
+        banner!.translatesAutoresizingMaskIntoConstraints = false
+        
     }
     
     @objc func emptyFieldListener() { // tgis
@@ -89,6 +103,7 @@ class PngViewController: UIViewController {
         let image  =  self.chordMaker.getFinalChordPic()
         self.png.image = image
     }
+    
 }
 extension PngViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

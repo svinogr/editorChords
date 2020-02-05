@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nZa-lV-8wK">
-    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
@@ -13,15 +13,15 @@
             <objects>
                 <tableViewController id="wNc-I3-7Xf" customClass="TableViewController" customModule="editorChords" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CXz-P1-1LY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="69" id="wbr-fO-Qf3" customClass="TableViewCell" customModule="editorChords" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="69"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="69"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wbr-fO-Qf3" id="71f-2V-BTl">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="h62-cL-LDj">
@@ -144,35 +144,39 @@
             <objects>
                 <viewController id="UZr-Pd-kvq" customClass="PngViewController" customModule="editorChords" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1wU-hA-Zca">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10_5" translatesAutoresizingMaskIntoConstraints="NO" id="Slz-CN-N4S">
-                                <rect key="frame" x="20" y="64" width="280" height="288"/>
+                                <rect key="frame" x="20" y="64" width="335" height="400"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mqn-r6-kBm">
-                                <rect key="frame" x="268" y="362.5" width="32" height="34"/>
+                                <rect key="frame" x="323" y="474.5" width="32" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Barre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6j-XL-rbr">
-                                <rect key="frame" x="20" y="413.5" width="41.5" height="20.5"/>
+                                <rect key="frame" x="20" y="526.5" width="41.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название Аккорда" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZ3-qj-O1b">
-                                <rect key="frame" x="20" y="368" width="149.5" height="20.5"/>
+                                <rect key="frame" x="20" y="480" width="149.5" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="om0-na-wuZ">
-                                <rect key="frame" x="251" y="408.5" width="51" height="31"/>
+                                <rect key="frame" x="306" y="521" width="51" height="31"/>
                                 <connections>
                                     <action selector="barre:" destination="UZr-Pd-kvq" eventType="valueChanged" id="eAR-h7-UoQ"/>
                                 </connections>
                             </switch>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GZ4-Sc-3OP" customClass="GADBannerView">
+                                <rect key="frame" x="27" y="597" width="320" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -182,10 +186,13 @@
                             <constraint firstItem="hCC-am-TI3" firstAttribute="trailing" secondItem="om0-na-wuZ" secondAttribute="trailing" constant="20" id="7T6-fA-zS9"/>
                             <constraint firstItem="g6j-XL-rbr" firstAttribute="leading" secondItem="Slz-CN-N4S" secondAttribute="trailing" constant="20" id="7ek-6B-UZ1"/>
                             <constraint firstItem="kZ3-qj-O1b" firstAttribute="top" secondItem="hCC-am-TI3" secondAttribute="top" constant="50" id="7uW-wu-8Oq"/>
+                            <constraint firstItem="GZ4-Sc-3OP" firstAttribute="leading" secondItem="hCC-am-TI3" secondAttribute="leading" constant="27" id="8X0-OG-9kJ"/>
                             <constraint firstItem="om0-na-wuZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="g6j-XL-rbr" secondAttribute="trailing" constant="8" symbolic="YES" id="8ho-mL-UVv"/>
                             <constraint firstItem="hCC-am-TI3" firstAttribute="bottom" secondItem="Slz-CN-N4S" secondAttribute="bottom" constant="20" id="9Rw-yd-6LC"/>
                             <constraint firstItem="hCC-am-TI3" firstAttribute="trailing" secondItem="om0-na-wuZ" secondAttribute="trailing" constant="20" id="HFN-lO-riw"/>
                             <constraint firstItem="kZ3-qj-O1b" firstAttribute="top" secondItem="Slz-CN-N4S" secondAttribute="bottom" constant="16" id="Is0-6h-GUE"/>
+                            <constraint firstItem="hCC-am-TI3" firstAttribute="bottom" secondItem="GZ4-Sc-3OP" secondAttribute="bottom" constant="20" id="JkF-6K-ziG"/>
+                            <constraint firstItem="GZ4-Sc-3OP" firstAttribute="centerX" secondItem="Slz-CN-N4S" secondAttribute="centerX" id="MPv-jy-WkD"/>
                             <constraint firstItem="hCC-am-TI3" firstAttribute="trailing" secondItem="mqn-r6-kBm" secondAttribute="trailing" constant="20" id="MgT-r8-jxU"/>
                             <constraint firstItem="g6j-XL-rbr" firstAttribute="top" secondItem="kZ3-qj-O1b" secondAttribute="bottom" constant="25" id="PL1-N8-PVR"/>
                             <constraint firstItem="mqn-r6-kBm" firstAttribute="firstBaseline" secondItem="kZ3-qj-O1b" secondAttribute="firstBaseline" id="TRv-Tm-0u6"/>
@@ -197,9 +204,11 @@
                             <constraint firstItem="kZ3-qj-O1b" firstAttribute="leading" secondItem="hCC-am-TI3" secondAttribute="leading" constant="20" id="eND-2F-eiG"/>
                             <constraint firstItem="Slz-CN-N4S" firstAttribute="top" secondItem="hCC-am-TI3" secondAttribute="top" constant="20" id="ePs-If-rJv"/>
                             <constraint firstItem="mqn-r6-kBm" firstAttribute="centerY" secondItem="kZ3-qj-O1b" secondAttribute="centerY" id="jrk-n3-Ist"/>
+                            <constraint firstItem="GZ4-Sc-3OP" firstAttribute="top" secondItem="1wU-hA-Zca" secondAttribute="top" constant="597" id="kJE-5G-yJy"/>
                             <constraint firstItem="g6j-XL-rbr" firstAttribute="leading" secondItem="hCC-am-TI3" secondAttribute="leading" constant="20" id="lyO-Od-LYp"/>
                             <constraint firstItem="om0-na-wuZ" firstAttribute="centerY" secondItem="g6j-XL-rbr" secondAttribute="centerY" id="r64-9h-PbX"/>
                             <constraint firstItem="g6j-XL-rbr" firstAttribute="top" secondItem="kZ3-qj-O1b" secondAttribute="bottom" constant="25" id="rXH-74-CqC"/>
+                            <constraint firstItem="GZ4-Sc-3OP" firstAttribute="top" relation="lessThanOrEqual" secondItem="om0-na-wuZ" secondAttribute="bottom" constant="45" id="t3O-dH-Tcy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hCC-am-TI3"/>
                         <variation key="default">
@@ -251,6 +260,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="banner" destination="GZ4-Sc-3OP" id="TfV-kQ-XLo"/>
                         <outlet property="chordLabel" destination="mqn-r6-kBm" id="OEb-5g-ZF0"/>
                         <outlet property="png" destination="Slz-CN-N4S" id="jLb-Ql-Lqe"/>
                     </connections>
@@ -265,7 +275,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nZa-lV-8wK" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xPe-hR-KMe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
