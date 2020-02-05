@@ -14,6 +14,7 @@
 		601B2D47234DD341003A87C4 /* Lad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601B2D46234DD341003A87C4 /* Lad.swift */; };
 		601B2D49234DD4F8003A87C4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601B2D48234DD4F8003A87C4 /* TableViewController.swift */; };
 		601B2D4B234DD61E003A87C4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601B2D4A234DD61E003A87C4 /* TableViewCell.swift */; };
+		6BE87A2A42BC6EA11B98151E /* Pods_editorChords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE36B9674C3A16538BEBB92C /* Pods_editorChords.framework */; };
 		D103A05023963968002AF5FA /* IpadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D103A04F23963968002AF5FA /* IpadViewController.swift */; };
 		D120856F23951F80006307EA /* ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D120856E23951F80006307EA /* ipad.storyboard */; };
 		D1223BF62372BB4C00136E44 /* editorChordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1223BF52372BB4C00136E44 /* editorChordsTests.swift */; };
@@ -22,6 +23,7 @@
 		D1E4B1ED238D415D008D798B /* ShemeMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E4B1EC238D415D008D798B /* ShemeMaker.swift */; };
 		D1E4B1EF238D50CB008D798B /* ChordMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E4B1EE238D50CB008D798B /* ChordMaker.swift */; };
 		D1EB90AF23967A170076A668 /* TableViewCellIpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EB90AE23967A170076A668 /* TableViewCellIpad.swift */; };
+		D96747FE196B2936021652B1 /* Pods_editorChordsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05266BD3266EA695443B759 /* Pods_editorChordsTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		082ED43F433B6A09648EA8FC /* Pods-editorChords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-editorChords.release.xcconfig"; path = "Target Support Files/Pods-editorChords/Pods-editorChords.release.xcconfig"; sourceTree = "<group>"; };
 		601B2D31234DD326003A87C4 /* editorChords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = editorChords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		601B2D34234DD326003A87C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		601B2D39234DD326003A87C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ipone.storyboard; sourceTree = "<group>"; };
@@ -44,6 +47,11 @@
 		601B2D46234DD341003A87C4 /* Lad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lad.swift; sourceTree = "<group>"; };
 		601B2D48234DD4F8003A87C4 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		601B2D4A234DD61E003A87C4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		7F20436C27FF05A5B51B9CAB /* Pods-editorChordsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-editorChordsTests.release.xcconfig"; path = "Target Support Files/Pods-editorChordsTests/Pods-editorChordsTests.release.xcconfig"; sourceTree = "<group>"; };
+		7F3F84FFC9DE5D054E540B9E /* Pods-editorChordsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-editorChordsTests.debug.xcconfig"; path = "Target Support Files/Pods-editorChordsTests/Pods-editorChordsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A05266BD3266EA695443B759 /* Pods_editorChordsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_editorChordsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE36B9674C3A16538BEBB92C /* Pods_editorChords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_editorChords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0AD8FE784F8C1EFE26331F3 /* Pods-editorChords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-editorChords.debug.xcconfig"; path = "Target Support Files/Pods-editorChords/Pods-editorChords.debug.xcconfig"; sourceTree = "<group>"; };
 		D103A04F23963968002AF5FA /* IpadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IpadViewController.swift; sourceTree = "<group>"; };
 		D120856E23951F80006307EA /* ipad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ipad.storyboard; sourceTree = "<group>"; };
 		D1223BF32372BB4C00136E44 /* editorChordsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = editorChordsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BE87A2A42BC6EA11B98151E /* Pods_editorChords.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,18 +77,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D96747FE196B2936021652B1 /* Pods_editorChordsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23EF8655931C8A691D3DFF5B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE36B9674C3A16538BEBB92C /* Pods_editorChords.framework */,
+				A05266BD3266EA695443B759 /* Pods_editorChordsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		601B2D28234DD326003A87C4 = {
 			isa = PBXGroup;
 			children = (
 				601B2D33234DD326003A87C4 /* editorChords */,
 				D1223BF42372BB4C00136E44 /* editorChordsTests */,
 				601B2D32234DD326003A87C4 /* Products */,
+				8CEE74B698152850CB13CF18 /* Pods */,
+				23EF8655931C8A691D3DFF5B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +132,18 @@
 				D1E4B1F0238D50DD008D798B /* Makers */,
 			);
 			path = editorChords;
+			sourceTree = "<group>";
+		};
+		8CEE74B698152850CB13CF18 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B0AD8FE784F8C1EFE26331F3 /* Pods-editorChords.debug.xcconfig */,
+				082ED43F433B6A09648EA8FC /* Pods-editorChords.release.xcconfig */,
+				7F3F84FFC9DE5D054E540B9E /* Pods-editorChordsTests.debug.xcconfig */,
+				7F20436C27FF05A5B51B9CAB /* Pods-editorChordsTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		D120857023951F8D006307EA /* Boards */ = {
@@ -146,9 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 601B2D43234DD328003A87C4 /* Build configuration list for PBXNativeTarget "editorChords" */;
 			buildPhases = (
+				34957C6423B2238281F97B27 /* [CP] Check Pods Manifest.lock */,
 				601B2D2D234DD326003A87C4 /* Sources */,
 				601B2D2E234DD326003A87C4 /* Frameworks */,
 				601B2D2F234DD326003A87C4 /* Resources */,
+				AEDA66AE089569AA8AFBDF2F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -163,6 +198,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1223BFC2372BB4C00136E44 /* Build configuration list for PBXNativeTarget "editorChordsTests" */;
 			buildPhases = (
+				7E31F3B038690BF381F9C2D2 /* [CP] Check Pods Manifest.lock */,
 				D1223BEF2372BB4C00136E44 /* Sources */,
 				D1223BF02372BB4C00136E44 /* Frameworks */,
 				D1223BF12372BB4C00136E44 /* Resources */,
@@ -235,6 +271,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		34957C6423B2238281F97B27 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-editorChords-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E31F3B038690BF381F9C2D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-editorChordsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AEDA66AE089569AA8AFBDF2F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-editorChords/Pods-editorChords-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-editorChords/Pods-editorChords-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-editorChords/Pods-editorChords-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		601B2D2D234DD326003A87C4 /* Sources */ = {
@@ -410,6 +510,7 @@
 		};
 		601B2D44234DD328003A87C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0AD8FE784F8C1EFE26331F3 /* Pods-editorChords.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -428,6 +529,7 @@
 		};
 		601B2D45234DD328003A87C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 082ED43F433B6A09648EA8FC /* Pods-editorChords.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -446,6 +548,7 @@
 		};
 		D1223BFA2372BB4C00136E44 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F3F84FFC9DE5D054E540B9E /* Pods-editorChordsTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -467,6 +570,7 @@
 		};
 		D1223BFB2372BB4C00136E44 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F20436C27FF05A5B51B9CAB /* Pods-editorChordsTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

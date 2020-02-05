@@ -43,20 +43,15 @@ class PngViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         chordLabel.addTarget(self, action: #selector(emptyFieldListener), for: .editingChanged)
-        
+        chordLabel.delegate = self
         setupKeyboard()
         
         setupImage()
-        
-//        let chordMaker = ChordMaker(lads: lads, isBare: isBare)
-//        png.image = chordMaker.getFinalChordPic()
-        // Do any additional setup after loading the view.
     }
     
     @objc func emptyFieldListener() { // tgis
             setupImage()
     }
-    
     
     private func setupKeyboard() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIWindow.keyboardWillShowNotification   , object: nil)
@@ -79,6 +74,7 @@ class PngViewController: UIViewController {
               }
     }
     
+    
     private func setupImage() {
 //        let  newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
 //        UIGraphicsEndImageContext()
@@ -92,6 +88,12 @@ class PngViewController: UIViewController {
          
         let image  =  self.chordMaker.getFinalChordPic()
         self.png.image = image
+    }
+}
+extension PngViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 

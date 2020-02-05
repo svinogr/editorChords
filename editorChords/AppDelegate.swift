@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = vc
   
         window?.makeKeyAndVisible()
-        print(window == nil)
+       // инициализация рекламы
+       // GADMobileAds.sharedInstance().start(completionHandler: nil)
         return true
     }
     
