@@ -51,7 +51,6 @@ class PngViewController: UIViewController, GADBannerViewDelegate {
         setupImage()
 
         setupBanner()
-        
     }
 private func setupBanner() {
         //banner = GADBannerView(adSize: kGADAdSizeBanner)
