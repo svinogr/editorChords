@@ -52,7 +52,8 @@ class PngViewController: UIViewController, GADBannerViewDelegate {
 
         setupBanner()
     }
-private func setupBanner() {
+    
+    private func setupBanner() {
         //banner = GADBannerView(adSize: kGADAdSizeBanner)
         banner!.adUnitID = "ca-app-pub-3940256099942544/2934735716" // поменять на свою
         banner!.rootViewController = self

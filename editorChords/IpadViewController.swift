@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class IpadViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class IpadViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GADBannerViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var png: UIImageView!
     @IBOutlet var switc: UIView!
+    @IBOutlet weak var banner: GADBannerView!
     
     @IBAction func share(_ sender: UIBarButtonItem) {
         let aPV = UIActivityViewController(activityItems: [png.image!], applicationActivities: nil)
@@ -58,6 +60,18 @@ class IpadViewController: UIViewController, UITableViewDelegate, UITableViewData
         //  tableView.rowHeight = UITableView.automaticDimension
         
         setupDefaultImag()
+        
+        setupBanner()
+    }
+    
+    private func setupBanner() {
+        //banner = GADBannerView(adSize: kGADAdSizeBanner)
+        banner!.adUnitID = "ca-app-pub-3940256099942544/2934735716" // поменять на свою
+        banner!.rootViewController = self
+        banner!.load(GADRequest())
+        banner!.delegate = self
+        banner!.translatesAutoresizingMaskIntoConstraints = false
+        
     }
     
     private func setupDefaultImag() {
