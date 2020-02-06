@@ -34,9 +34,6 @@ class BareMaker {
       
         //    if quantitiPlayedStrings > 4 {
         drowBare(from: maxStringInFirstlad)
-        //   }
-        
-        
     }
     
     private func maxStringForBare(lad: Lad) -> Int {
@@ -63,17 +60,20 @@ class BareMaker {
     
     private func drowBare(from: Int) {
         let step = from * 200 + 200
-        let endPoint = size.width - 200 + CGFloat( offset)
+        let endPoint = size.width - 200 + CGFloat(offset)
+        let outerPoint = 20
         
         context.setAlpha(0.8)
         context.setLineWidth(45.0)
+        let bareLinePointStart = CGPoint(x: step + offset + ChordMaker.offsetForLeft - outerPoint, y: 225 + ChordMaker.offsetForLabel)
+        let bareLinePointEnd =  CGPoint(x: endPoint + CGFloat(outerPoint), y: CGFloat( 225 + ChordMaker.offsetForLabel))
+    
         context.setStrokeColor(UIColor.black.cgColor)
-        context.move(to: CGPoint(x: step + offset + ChordMaker.offsetForLeft, y: 225 + ChordMaker.offsetForLabel))
-        context.addLine(to: CGPoint(x: endPoint, y: CGFloat( 225 + ChordMaker.offsetForLabel)))
+        context.move(to: bareLinePointStart)
+        context.addLine(to: bareLinePointEnd)
         context.strokePath()
-        
         context.setStrokeColor(UIColor.black.cgColor)
-        
+        context.setAlpha(0.8)
         context.setLineWidth(10.0)
         
         let ab = (2000.0  - Double (from * 400)) / 2
@@ -83,9 +83,20 @@ class BareMaker {
         let point = CGPoint(x:700  + Double (from * 100 + offset + ChordMaker.offsetForLeft), y: r + 160 + Double(ChordMaker.offsetForLabel))
         let angl = acos(Double ((ab/2)/r))
         
-       // print("a = \(ab)  b = \(ab)  c = \(c)  r = \(r) po = \(point) abgle = \(angl)")
+        let wAndhCircle: CGFloat = 45
         
+        let rectangleStart = CGRect(x: bareLinePointStart.x - wAndhCircle/2, y: bareLinePointStart.y - wAndhCircle/2, width: wAndhCircle , height: wAndhCircle)
+        let rectangleEnd = CGRect(x: bareLinePointEnd.x - wAndhCircle/2, y: bareLinePointEnd.y - wAndhCircle/2, width: wAndhCircle , height: wAndhCircle)
+        
+       // context.setFillColor(UIColor.red.cgColor)
+      //  context.setStrokeColor(UIColor.red.cgColor)
+    //    context.addEllipse(in: rectangle)
+        context.fillEllipse(in: rectangleStart)
+        context.fillEllipse(in: rectangleEnd)
+         context.setAlpha(0.8)
         context.addArc(center: point, radius: CGFloat (r), startAngle: CGFloat (3.1416 + angl), endAngle: CGFloat (6.2832 - angl), clockwise: false)
+       // context.strokePath()
         context.drawPath(using: .stroke) // or .fillStroke if need filling
+       
     }
 }

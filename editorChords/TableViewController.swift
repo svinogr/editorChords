@@ -58,6 +58,7 @@ class TableViewController: UITableViewController {
         vc.lads = smal
     }
 
+    // перенести в акорд мейкер чтоб убрать дублир код )
     private func createArrayAckord(from array: [Lad]) -> [Lad] {
         var startLad = 0
        
