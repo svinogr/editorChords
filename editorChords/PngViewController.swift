@@ -47,9 +47,7 @@ class PngViewController: UIViewController, GADBannerViewDelegate {
         chordLabel.addTarget(self, action: #selector(emptyFieldListener), for: .editingChanged)
         chordLabel.delegate = self
         setupKeyboard()
-        
         setupImage()
-
         setupBanner()
     }
     
@@ -88,12 +86,7 @@ class PngViewController: UIViewController, GADBannerViewDelegate {
               }
     }
     
-    
     private func setupImage() {
-//        let  newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-//        UIGraphicsEndImageContext()
-//        png.image = newImage
-        
         if let label = chordLabel.text {
             self.chordMaker  = ChordMaker(lads: lads, isBare: self.isBare, label: label)
         } else {

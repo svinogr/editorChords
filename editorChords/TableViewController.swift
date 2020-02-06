@@ -56,12 +56,6 @@ class TableViewController: UITableViewController {
         let vc = segue.destination as! PngViewController
         
         vc.lads = smal
-        
-//        for i in smal {
-//           // i.printStr()
-//           // i.printStrWithNumberStr()
-//        }
-//
     }
 
     private func createArrayAckord(from array: [Lad]) -> [Lad] {
@@ -84,8 +78,6 @@ class TableViewController: UITableViewController {
                 break
             }
         }
-        
-      //  print(startLad)
        
         var smallAr = [Lad]()
         let grif = lads[0]
@@ -99,14 +91,9 @@ class TableViewController: UITableViewController {
                    }
         
         for i in startLad..<endLad {
-            //      array[i].printStr()
-            
             smallAr.append(array[i].copy())
         }
         
         return smallAr
-        
     }
-    
-
 }

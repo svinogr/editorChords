@@ -30,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-       print("2222")
         let urlComp = URLComponents(url: url, resolvingAgainstBaseURL: true)
         
         guard  let params = urlComp?.queryItems! else {

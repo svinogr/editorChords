@@ -18,7 +18,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QHJ-4h-gcq">
                                 <rect key="frame" x="20" y="70" width="546.5" height="934"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="162" id="eVr-II-z27" customClass="TableViewCellIpad" customModule="editorChords" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="546.5" height="162"/>
@@ -87,7 +87,6 @@
                                                 <constraint firstItem="oQf-fu-jRa" firstAttribute="top" secondItem="AvU-7v-qzj" secondAttribute="top" id="zc2-il-psn"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="fiveString" destination="WvO-Ih-MEK" id="Xg8-Bw-LWM"/>
                                             <outlet property="fourString" destination="DmQ-bz-fnR" id="v6o-hY-ChC"/>
@@ -272,18 +271,18 @@
                                 <exclude reference="O4o-jY-XyH"/>
                                 <exclude reference="UE9-zY-5cI"/>
                                 <include reference="rHD-pA-IFO"/>
+                                <exclude reference="eT5-5x-Qzd"/>
                                 <exclude reference="aHX-3u-PTF"/>
                                 <exclude reference="qht-o6-cpz"/>
                                 <include reference="sCQ-Bx-V2c"/>
                                 <exclude reference="7El-nQ-JgR"/>
                                 <include reference="ayh-uv-Pd7"/>
                                 <exclude reference="uUd-Bg-tvh"/>
-                                <exclude reference="eT5-5x-Qzd"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Saz-80-cjE">
-                        <barButtonItem key="rightBarButtonItem" title="Preview" id="vMp-WG-8TF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="vMp-WG-8TF">
                             <connections>
                                 <action selector="share:" destination="5Fc-nh-Vbf" id="rPj-hu-J1c"/>
                             </connections>
@@ -291,6 +290,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="banner" destination="3a7-Jl-v7B" id="JZp-cD-KTo"/>
+                        <outlet property="chordLabel" destination="kOF-lu-A0v" id="COA-5N-XzA"/>
                         <outlet property="png" destination="w6h-Lq-1RE" id="fjB-0X-rwK"/>
                         <outlet property="switc" destination="tIt-wr-sUn" id="gFw-uM-Dh8"/>
                         <outlet property="tableView" destination="QHJ-4h-gcq" id="8aC-cf-pgX"/>

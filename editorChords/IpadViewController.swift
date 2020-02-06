@@ -15,6 +15,7 @@ class IpadViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var png: UIImageView!
     @IBOutlet var switc: UIView!
     @IBOutlet weak var banner: GADBannerView!
+    @IBOutlet weak var chordLabel: UITextField!
     
     @IBAction func share(_ sender: UIBarButtonItem) {
         let aPV = UIActivityViewController(activityItems: [png.image!], applicationActivities: nil)
@@ -29,7 +30,6 @@ class IpadViewController: UIViewController, UITableViewDelegate, UITableViewData
         isBare = !isBare
     }
     
-    
     var isBare: Bool = true {
         didSet {
             setImage()
@@ -37,31 +37,32 @@ class IpadViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     var chordMaker: ChordMaker!
-    
  
     var lads = [Lad]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        chordLabel.addTarget(self, action: #selector(emptyFieldListener), for: .editingChanged)
+        chordLabel.delegate = self
         setupKeyboard()
         
-        view.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+       // view.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         tableView.backgroundView = UIImageView(image: UIImage())
         
         for i in 0..<13 {
             let lad = Lad(id: i)
             lads.append(lad)
         }
+        
         tableView.delegate = self
         tableView.dataSource = self
-        
         tableView.estimatedRowHeight = 400
-        //  tableView.rowHeight = UITableView.automaticDimension
-        
         setupDefaultImag()
-        
         setupBanner()
+    }
+    
+    @objc func emptyFieldListener() { // tgis
+            setImage()
     }
     
     private func setupBanner() {
@@ -85,9 +86,8 @@ class IpadViewController: UIViewController, UITableViewDelegate, UITableViewData
         chordMaker = ChordMaker(lads: defaultLad, isBare: self.isBare)
         png.image = chordMaker.getFinalChordPic()
     }
+    
     // MARK: - Table view data source
-    
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -97,7 +97,6 @@ class IpadViewController: UIViewController, UITableViewDelegate, UITableViewData
         // #warning Incomplete implementation, return the number of rows
         return lads.count
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TableViewCellIpad
@@ -115,10 +114,16 @@ class IpadViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell!
     }
     
-    
     func setImage() {
         let lad = self.createArrayAckord(from: self.lads)
-        self.chordMaker  = ChordMaker(lads: lad, isBare: self.isBare)
+        if let label = chordLabel.text {
+                   self.chordMaker  = ChordMaker(lads: lad, isBare: self.isBare, label: label)
+               } else {
+                    self.chordMaker  = ChordMaker(lads: lad, isBare: self.isBare)
+               }
+        
+        
+      //  self.chordMaker  = ChordMaker(lads: lad, isBare: self.isBare)
         let image  =  self.chordMaker.getFinalChordPic()
         self.png.image = image
     }
@@ -143,8 +148,6 @@ class IpadViewController: UIViewController, UITableViewDelegate, UITableViewData
              if self.view.frame.origin.y != 0{self.view.frame.origin.y += keyboardFrame.height
               }
     }
-    
-    
     
     private func createArrayAckord(from array: [Lad]) -> [Lad] {
         var startLad = 0
@@ -178,14 +181,17 @@ class IpadViewController: UIViewController, UITableViewDelegate, UITableViewData
             //startLad = 8
         }
         
-        
         for i in startLad..<endLad {
-            //      array[i].printStr()
-            
             smallAr.append(array[i].copy())
         }
         
         return smallAr
-        
+    }
+}
+
+extension IpadViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
